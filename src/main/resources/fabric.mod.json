@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "beyond_ones_eyes",
+	"version": "${version}",
+	"name": "Beyond Ones Eyes",
+	"description": "Adds creatures and blocks only visible through special lenses, good luck :P",
+	"authors": [
+		"DoomXD_"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/beyond_ones_eyes/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.doomxd.boe.BeyondOnesEyes"
+		],
+		"fabric-datagen": [
+			"net.doomxd.boe.BeyondOnesEyesDataGenerator"
+		]
+	},
+	"mixins": [
+		"beyond_ones_eyes.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
