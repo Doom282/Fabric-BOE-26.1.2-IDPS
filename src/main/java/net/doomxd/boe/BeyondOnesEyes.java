@@ -1,5 +1,6 @@
 package net.doomxd.boe;
 
+import net.doomxd.boe.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.resources.Identifier;
@@ -21,7 +22,7 @@ public class BeyondOnesEyes implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello Fabric world!");
+		ModItems.registerModItems();
 	}
 
 	public static Identifier id(String path) {
