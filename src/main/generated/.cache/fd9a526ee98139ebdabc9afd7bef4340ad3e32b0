@@ -1,3 +1,8 @@
 // 26.1.2	-999999999-01-01T00:00:00	Beyond Ones Eyes/Model Definitions
+10a793288acf073f361b8f8b5097a444f2d3f133 assets/beyond_ones_eyes/blockstates/lesolite_ore.json
 bdc4385209f88487e84932726c275e1935b853bd assets/beyond_ones_eyes/items/lesolite.json
+846a686534b0b04e019447c12d9df12a5079cac5 assets/beyond_ones_eyes/items/lesolite_ore.json
+341754a63c80a3b59914e9d04a77306efb3c148c assets/beyond_ones_eyes/items/lesolite_poor_lens.json
+360b5cd67a35364b47c453af38e13f8a4f96d847 assets/beyond_ones_eyes/models/block/lesolite_ore.json
 822e73055cb635c4aab9e0b429c632a4b078eb59 assets/beyond_ones_eyes/models/item/lesolite.json
+2c59c04ff6687851e8d9ef5444aa190c0d381cf6 assets/beyond_ones_eyes/models/item/lesolite_poor_lens.json

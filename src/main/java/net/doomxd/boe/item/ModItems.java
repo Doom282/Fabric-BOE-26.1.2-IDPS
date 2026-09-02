@@ -16,6 +16,7 @@ import java.util.function.Function;
 
 public class ModItems {
     public static final Item LESOLITE = registerItem("lesolite", Item::new);
+    public static final Item LESOLITE_POOR_LENS = registerItem("lesolite_poor_lens", Item::new);
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(BeyondOnesEyes.MOD_ID, name),
@@ -30,6 +31,7 @@ public class ModItems {
         //use output.accept(ITEM_NAME) to add items
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
             output.accept(LESOLITE);
+            output.accept(LESOLITE_POOR_LENS);
         });
     }
 
