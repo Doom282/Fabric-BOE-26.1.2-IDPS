@@ -1,4 +1,7 @@
 {
   "item.beyond_ones_eyes.lesolite": "Lesolite",
-  "block.beyond_ones_eyes.lesolite_ore": "Lesolite Ore"
+  "block.beyond_ones_eyes.lesolite_ore": "Lesolite Ore",
+  "item.beyond_ones_eyes.lesolite_poor_lens": "Poor Lesolite Lens",
+
+  "creativemodetab.beyond_ones_eyes.boe_items": "Beyond One's Eyes"
 }

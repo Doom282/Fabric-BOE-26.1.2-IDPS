@@ -1,5 +1,7 @@
 package net.doomxd.boe;
 
+import net.doomxd.boe.datagen.ModBlockTagsProvider;
+import net.doomxd.boe.datagen.ModLootTableProvider;
 import net.doomxd.boe.datagen.ModModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -10,5 +12,7 @@ public class BeyondOnesEyesDataGenerator implements DataGeneratorEntrypoint {
 		var pack = fabricDataGenerator.createPack();
 
 		pack.addProvider(ModModelProvider::new);
+		pack.addProvider(ModBlockTagsProvider::new);
+		pack.addProvider(ModLootTableProvider::new);
 	}
 }
