@@ -29,7 +29,7 @@ public class ModLootTableProvider extends FabricBlockLootSubProvider {
     public void generate() {
         //dropSelf();
         //add(ModBlocks.LESOLITE_ORE, createOreDrop(ModBlocks.LESOLITE_ORE, ModItems.LESOLITE));
-        add(ModBlocks.LESOLITE_ORE, createManyOreDrops(ModBlocks.LESOLITE_ORE, ModItems.LESOLITE, 2, 4));
+        add(ModBlocks.LESOLITE_ORE, createManyOreDrops(ModBlocks.LESOLITE_ORE, ModItems.LESOLITE, 4, 8));
     }
 
     public LootTable.Builder createManyOreDrops(final Block block, Item item, float mindrops, float maxdrops) {
