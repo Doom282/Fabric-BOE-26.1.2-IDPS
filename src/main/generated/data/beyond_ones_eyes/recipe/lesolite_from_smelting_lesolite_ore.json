@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 4.0,
+  "group": "lesolite",
+  "ingredient": "beyond_ones_eyes:lesolite_ore",
+  "result": {
+    "id": "beyond_ones_eyes:lesolite"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lesolite_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "beyond_ones_eyes:lesolite_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "beyond_ones_eyes:lesolite_from_blasting_lesolite_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_lesolite_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "beyond_ones_eyes:lesolite_from_blasting_lesolite_ore"
+    ]
+  }
+}

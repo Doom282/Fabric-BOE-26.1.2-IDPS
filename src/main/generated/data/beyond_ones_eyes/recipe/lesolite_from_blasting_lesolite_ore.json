@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 100,
+  "experience": 8.0,
+  "group": "lesolite",
+  "ingredient": "beyond_ones_eyes:lesolite_ore",
+  "result": {
+    "id": "beyond_ones_eyes:lesolite"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "lesolite",
+  "key": {
+    "L": "beyond_ones_eyes:lesolite",
+    "R": "minecraft:blaze_rod"
+  },
+  "pattern": [
+    "RLR",
+    "LLL",
+    "RLR"
+  ],
+  "result": {
+    "id": "beyond_ones_eyes:lesolite_poor_lens"
+  }
+}
