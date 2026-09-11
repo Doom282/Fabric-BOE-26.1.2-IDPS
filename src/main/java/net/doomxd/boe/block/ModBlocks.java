@@ -1,6 +1,7 @@
 package net.doomxd.boe.block;
 
 import net.doomxd.boe.BeyondOnesEyes;
+import net.doomxd.boe.block.custom.ElsewhereBlock;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -12,6 +13,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import java.util.function.Function;
@@ -23,6 +25,10 @@ public class ModBlocks {
     public static final Block LESOLITE_ORE = registerBlock("lesolite_ore",
             properties -> new Block(properties.strength(4f)
                     .requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final Block ELSEWHERE_BLOCK = registerBlock("elsewhere_block",
+            properties -> new ElsewhereBlock(properties.strength(1f)
+                    .requiresCorrectToolForDrops().sound(SoundType.WOOD).noOcclusion()));
+    //ADD NO OCCLUSION TO ALL ELSEWHERE BLOCKS
 
     private static void registerBlockItem(String name, Block block)
     {
@@ -44,6 +50,7 @@ public class ModBlocks {
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(output -> {
             output.accept(LESOLITE_ORE);
+            output.accept(ELSEWHERE_BLOCK);
         });
     }
 }

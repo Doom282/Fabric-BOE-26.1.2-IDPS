@@ -18,6 +18,7 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
         blockModelGenerators.createTrivialCube(ModBlocks.LESOLITE_ORE);
+        blockModelGenerators.createTrivialCube(ModBlocks.ELSEWHERE_BLOCK);
     }
 
     @Override
