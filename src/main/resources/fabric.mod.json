@@ -18,6 +18,9 @@
 		"main": [
 			"net.doomxd.boe.BeyondOnesEyes"
 		],
+		"client": [
+			"net.doomxd.boe.BeyondOnesEyesClient"
+		],
 		"fabric-datagen": [
 			"net.doomxd.boe.BeyondOnesEyesDataGenerator"
 		]
