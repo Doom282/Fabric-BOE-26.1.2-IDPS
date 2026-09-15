@@ -16,6 +16,7 @@ public class ElsewhereBlock extends BaseEntityBlock {
     public ElsewhereBlock(Properties properties) {
         super(properties);
     }
+
     protected boolean propagatesSkylightDown(final BlockState state) {
         return state.getFluidState().isEmpty();
     }

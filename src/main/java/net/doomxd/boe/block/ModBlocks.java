@@ -30,6 +30,7 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops().sound(SoundType.WOOD).noOcclusion()));
     //ADD NO OCCLUSION TO ALL ELSEWHERE BLOCKS
 
+
     private static void registerBlockItem(String name, Block block)
     {
         Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(BeyondOnesEyes.MOD_ID, name),
