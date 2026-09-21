@@ -1,35 +1,18 @@
 package net.doomxd.boe.block.entity.renderer;
 
-import com.mojang.blaze3d.pipeline.RenderPipeline;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Axis;
-import net.doomxd.boe.block.ModBlocks;
-import net.doomxd.boe.block.custom.ElsewhereBlock;
 import net.doomxd.boe.block.entity.custom.ElsewhereBlockEntity;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Font;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.SubmitNodeCollector;
-import net.minecraft.client.renderer.block.dispatch.BlockStateModelPart;
 import net.minecraft.client.renderer.block.model.BlockDisplayContext;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
-import net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState;
 import net.minecraft.client.renderer.feature.ModelFeatureRenderer;
-import net.minecraft.client.renderer.item.ItemModelResolver;
-import net.minecraft.client.renderer.rendertype.RenderSetup;
-import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.phys.Vec3;
 import org.jspecify.annotations.Nullable;
-
-import java.util.List;
-import java.util.function.Function;
-
-import static java.awt.SystemColor.text;
 
 public class ElsewhereBlockEntityRenderer implements BlockEntityRenderer<ElsewhereBlockEntity, ElseworldBlockEntityRenderState> {
     public static final BlockDisplayContext BLOCK_DISPLAY_CONTEXT = BlockDisplayContext.create();
@@ -58,7 +41,10 @@ public class ElsewhereBlockEntityRenderer implements BlockEntityRenderer<Elsewhe
     public void submit(ElseworldBlockEntityRenderState state, PoseStack matrices, SubmitNodeCollector queue, CameraRenderState cameraState) {
         //queue.submitBlockModel(matrices, ModBlocks.ELSEWHERE_BLOCK., 1, 1, 1, 1, 1);
         ClientLevel level = Minecraft.getInstance().level;
-        state.blockModel.submit(matrices, queue, state.lightCoords, OverlayTexture.NO_OVERLAY, 0);
+        assert Minecraft.getInstance().player != null;
+        if(Minecraft.getInstance().player.isCrouching()) {
+            state.blockModel.submit(matrices, queue, state.lightCoords, OverlayTexture.NO_OVERLAY, 0);
+            }
 
 /**
         String text = "boop";
