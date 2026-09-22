@@ -25,7 +25,7 @@ public class ModBlocks {
     public static final Block LESOLITE_ORE = registerBlock("lesolite_ore",
             properties -> new Block(properties.strength(4f)
                     .requiresCorrectToolForDrops().sound(SoundType.STONE)));
-    public static final Block ELSEWHERE_BLOCK = registerBlock("elsewhere_block",
+    public static final Block ELSEWHERE_WOOD_PLANKS = registerBlock("elsewhere_wood_planks",
             properties -> new ElsewhereBlock(properties.strength(1f)
                     .requiresCorrectToolForDrops().sound(SoundType.WOOD).noOcclusion()));
     //ADD NO OCCLUSION TO ALL ELSEWHERE BLOCKS
@@ -51,7 +51,7 @@ public class ModBlocks {
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(output -> {
             output.accept(LESOLITE_ORE);
-            output.accept(ELSEWHERE_BLOCK);
+            output.accept(ELSEWHERE_WOOD_PLANKS);
         });
     }
 }

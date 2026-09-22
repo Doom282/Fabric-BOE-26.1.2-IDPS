@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "beyond_ones_eyes:block/elsewhere_block"
+    "all": "beyond_ones_eyes:block/elsewhere_wood_planks"
   }
 }

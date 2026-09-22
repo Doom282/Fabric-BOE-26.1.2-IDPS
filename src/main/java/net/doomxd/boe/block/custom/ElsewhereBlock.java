@@ -60,6 +60,16 @@ public class ElsewhereBlock extends BaseEntityBlock {
     }
 
     @Override
+    protected VoxelShape getOcclusionShape(BlockState state) {
+        return Shapes.empty();
+    }
+
+    @Override
+    protected boolean useShapeForLightOcclusion(BlockState state) {
+        return false;
+    }
+
+    @Override
     protected MapCodec<? extends BaseEntityBlock> codec() {
         return simpleCodec(ElsewhereBlock::new);
     }
