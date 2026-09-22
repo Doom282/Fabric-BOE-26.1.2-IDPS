@@ -65,6 +65,29 @@ public class ElsewhereBlock extends BaseEntityBlock {
     }
 
     @Override
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        if(!(context instanceof EntityCollisionContext entityCollisionContext))
+        {
+            return Shapes.empty();
+        }
+        else {
+            if(entityCollisionContext.getEntity() !=null && entityCollisionContext.getEntity().is(EntityType.PLAYER))
+            {
+                Entity player = entityCollisionContext.getEntity();
+                if(player.isCrouching())
+                {
+                    return Shapes.block();
+                }
+                else
+                {
+                    return Shapes.empty();
+                }
+            }
+            return Shapes.block();
+        }
+    }
+
+    @Override
     protected boolean useShapeForLightOcclusion(BlockState state) {
         return false;
     }
