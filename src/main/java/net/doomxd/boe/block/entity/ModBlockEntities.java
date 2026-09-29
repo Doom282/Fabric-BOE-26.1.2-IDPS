@@ -14,7 +14,14 @@ public class ModBlockEntities {
              Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE,
                      Identifier.fromNamespaceAndPath(BeyondOnesEyes.MOD_ID,
                              "elseworld_be"), FabricBlockEntityTypeBuilder
-                             .create(ElsewhereBlockEntity::new, ModBlocks.ELSEWHERE_WOOD_PLANKS).build());
+                             .create(ElsewhereBlockEntity::new, ModBlocks.ELSEWHERE_WOOD_PLANKS,
+                                     ModBlocks.ELSEWHERE_WOOD_LOG,
+                                     ModBlocks.ELSEWHERE_LEAVES
+                             //list all blocks for elsewhere blocks here
+
+
+
+                             ).build());
     public static void registerBlockEntities()
     {
         BeyondOnesEyes.LOGGER.info("Registering Block Entities for" + BeyondOnesEyes.MOD_ID);

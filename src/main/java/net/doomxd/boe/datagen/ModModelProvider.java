@@ -19,6 +19,8 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
         blockModelGenerators.createTrivialCube(ModBlocks.LESOLITE_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.ELSEWHERE_WOOD_PLANKS);
+        blockModelGenerators.createTrivialCube(ModBlocks.ELSEWHERE_WOOD_LOG);
+        blockModelGenerators.createTrivialCube(ModBlocks.ELSEWHERE_LEAVES);
     }
 
     @Override

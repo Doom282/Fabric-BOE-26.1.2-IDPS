@@ -13,7 +13,6 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import java.util.function.Function;
@@ -28,8 +27,20 @@ public class ModBlocks {
     public static final Block ELSEWHERE_WOOD_PLANKS = registerBlock("elsewhere_wood_planks",
             properties -> new ElsewhereBlock(properties.strength(1f)
                     .requiresCorrectToolForDrops().sound(SoundType.WOOD).noOcclusion()));
-    //ADD NO OCCLUSION TO ALL ELSEWHERE BLOCKS
 
+    public static final Block ELSEWHERE_LEAVES = registerBlock("elsewhere_leaves",
+            properties -> new ElsewhereBlock(properties.strength(1f)
+                    .requiresCorrectToolForDrops().sound(SoundType.WOOD).noOcclusion()));
+
+    public static final Block ELSEWHERE_WOOD_LOG = registerBlock("elsewhere_wood_log",
+            properties -> new ElsewhereBlock(properties.strength(1f)
+                    .requiresCorrectToolForDrops().sound(SoundType.WOOD).noOcclusion()));
+    /**To add elsehwhere blocks
+    add the block here
+     add to creative menus below and in ModCreativeModeTabs
+     add textures and make them work with datagen in ModModelProvider
+     add the block to the list in ModBlockEntities
+    **/
 
     private static void registerBlockItem(String name, Block block)
     {
@@ -52,6 +63,8 @@ public class ModBlocks {
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(output -> {
             output.accept(LESOLITE_ORE);
             output.accept(ELSEWHERE_WOOD_PLANKS);
+            output.accept(ELSEWHERE_WOOD_LOG);
+            output.accept(ELSEWHERE_LEAVES);
         });
     }
 }

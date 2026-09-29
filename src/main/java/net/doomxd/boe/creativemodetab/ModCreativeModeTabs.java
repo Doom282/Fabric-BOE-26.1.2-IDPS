@@ -10,7 +10,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 
 public class ModCreativeModeTabs {
     public static final CreativeModeTab BOE_ITEMS_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
@@ -22,6 +21,8 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.LESOLITE_POOR_LENS);
                 output.accept(ModBlocks.LESOLITE_ORE);
                 output.accept(ModBlocks.ELSEWHERE_WOOD_PLANKS);
+                output.accept(ModBlocks.ELSEWHERE_WOOD_LOG);
+                output.accept(ModBlocks.ELSEWHERE_LEAVES);
             }).build());
 
     public static void registerModCreativeModeTabs()
