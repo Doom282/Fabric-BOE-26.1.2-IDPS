@@ -1,2 +1,5 @@
 // 26.1.2	-999999999-01-01T00:00:00	Beyond Ones Eyes/Block Loot Tables
+45c7dea03ad73aa91fdce9560eadeb2af8d4da26 data/beyond_ones_eyes/loot_table/blocks/elsewhere_leaves.json
+c7fa7b85ae2a9b53547ef81382cff8c91413a467 data/beyond_ones_eyes/loot_table/blocks/elsewhere_wood.json
+9e6a11ffc72ffb5f38a245ee813860474adfcdd0 data/beyond_ones_eyes/loot_table/blocks/elsewhere_wood_planks.json
 0801102556d772e062eb0c38a93ca95ccb21de52 data/beyond_ones_eyes/loot_table/blocks/lesolite_ore.json

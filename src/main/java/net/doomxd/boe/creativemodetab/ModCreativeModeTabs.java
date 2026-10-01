@@ -21,7 +21,7 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.LESOLITE_POOR_LENS);
                 output.accept(ModBlocks.LESOLITE_ORE);
                 output.accept(ModBlocks.ELSEWHERE_WOOD_PLANKS);
-                output.accept(ModBlocks.ELSEWHERE_WOOD_LOG);
+                output.accept(ModBlocks.ELSEWHERE_WOOD);
                 output.accept(ModBlocks.ELSEWHERE_LEAVES);
             }).build());
 

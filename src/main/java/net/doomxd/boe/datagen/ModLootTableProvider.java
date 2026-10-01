@@ -28,6 +28,10 @@ public class ModLootTableProvider extends FabricBlockLootSubProvider {
     @Override
     public void generate() {
         //dropSelf();
+        dropWhenSilkTouch(ModBlocks.ELSEWHERE_LEAVES);
+        dropSelf(ModBlocks.ELSEWHERE_WOOD_PLANKS);
+        dropSelf(ModBlocks.ELSEWHERE_WOOD);
+        add(ModBlocks.ELSEWHERE_LEAVES, createManyOreDrops(ModBlocks.ELSEWHERE_LEAVES, Items.DIAMOND, 0, 1));
         //add(ModBlocks.LESOLITE_ORE, createOreDrop(ModBlocks.LESOLITE_ORE, ModItems.LESOLITE));
         add(ModBlocks.LESOLITE_ORE, createManyOreDrops(ModBlocks.LESOLITE_ORE, ModItems.LESOLITE, 2, 3));
     }
@@ -38,5 +42,6 @@ public class ModLootTableProvider extends FabricBlockLootSubProvider {
                 .applyExplosionDecay(block, LootItem.lootTableItem(item)
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(mindrops, maxdrops)))
                         .apply(ApplyBonusCount.addOreBonusCount(enchantments.getOrThrow(Enchantments.FORTUNE)))));
+
     }
 }

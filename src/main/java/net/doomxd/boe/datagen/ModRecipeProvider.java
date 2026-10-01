@@ -43,6 +43,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(ModItems.LESOLITE), has(ModItems.LESOLITE))
                         .group("lesolite")
                         .save(output);
+
+                List<ItemLike> BOE_ELSEWHERE_WOOD_BLOCKS = List.of(ModBlocks.ELSEWHERE_LEAVES, ModBlocks.ELSEWHERE_WOOD, ModBlocks.ELSEWHERE_WOOD_PLANKS);
+
+                shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ELSEWHERE_WOOD_PLANKS, 4) // You can also specify an int to produce more than one
+                        .requires(ModBlocks.ELSEWHERE_WOOD) // You can also specify an int to require more than one, or a tag to accept multiple things
+                        // Create an advancement that gives you the recipe
+                        .unlockedBy(getHasName(ModBlocks.ELSEWHERE_WOOD), has(ModBlocks.ELSEWHERE_WOOD))
+                        .save(output);
             }
         };
     }

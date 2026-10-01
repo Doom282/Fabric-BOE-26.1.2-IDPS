@@ -26,15 +26,15 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final Block ELSEWHERE_WOOD_PLANKS = registerBlock("elsewhere_wood_planks",
             properties -> new ElsewhereBlock(properties.strength(1f)
-                    .requiresCorrectToolForDrops().sound(SoundType.WOOD).noOcclusion()));
+                    .sound(SoundType.WOOD).noOcclusion().ignitedByLava()));
 
     public static final Block ELSEWHERE_LEAVES = registerBlock("elsewhere_leaves",
-            properties -> new ElsewhereBlock(properties.strength(1f)
-                    .requiresCorrectToolForDrops().sound(SoundType.WOOD).noOcclusion()));
+            properties -> new ElsewhereBlock(properties.strength(0.1f)
+                    .sound(SoundType.CHERRY_LEAVES).noOcclusion().ignitedByLava()));
 
-    public static final Block ELSEWHERE_WOOD_LOG = registerBlock("elsewhere_wood_log",
+    public static final Block ELSEWHERE_WOOD = registerBlock("elsewhere_wood",
             properties -> new ElsewhereBlock(properties.strength(1f)
-                    .requiresCorrectToolForDrops().sound(SoundType.WOOD).noOcclusion()));
+                    .sound(SoundType.WOOD).noOcclusion().ignitedByLava()));
     /**To add elsehwhere blocks
     add the block here
      add to creative menus below and in ModCreativeModeTabs
@@ -63,7 +63,7 @@ public class ModBlocks {
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(output -> {
             output.accept(LESOLITE_ORE);
             output.accept(ELSEWHERE_WOOD_PLANKS);
-            output.accept(ELSEWHERE_WOOD_LOG);
+            output.accept(ELSEWHERE_WOOD);
             output.accept(ELSEWHERE_LEAVES);
         });
     }
