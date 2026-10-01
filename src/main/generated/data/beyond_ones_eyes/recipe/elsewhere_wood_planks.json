@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "beyond_ones_eyes:elsewhere_wood"
+  ],
+  "result": {
+    "count": 4,
+    "id": "beyond_ones_eyes:elsewhere_wood_planks"
+  }
+}
