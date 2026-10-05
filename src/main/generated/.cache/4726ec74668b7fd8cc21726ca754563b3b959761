@@ -1,2 +1,6 @@
 // 26.1.2	-999999999-01-01T00:00:00	Beyond Ones Eyes/Tags for minecraft:block
+1d3a489cb1a12d3ce4ff7f0f78bf1050f0642be2 data/minecraft/tags/block/leaves.json
+e2a35e6801559f7e8baadd7c18a3fece5a998748 data/minecraft/tags/block/logs.json
+e2a35e6801559f7e8baadd7c18a3fece5a998748 data/minecraft/tags/block/logs_that_burn.json
 742fbaa8ce079020fcfe3915f2b43f525de6f2e3 data/minecraft/tags/block/mineable/pickaxe.json
+bbde779c46d41e52172b4f0e0041b652e7a3f598 data/minecraft/tags/block/planks.json
