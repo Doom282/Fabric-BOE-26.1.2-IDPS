@@ -17,6 +17,7 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlac
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.CherryTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
 
 public class ModConfiguredFeatures {
 
@@ -25,7 +26,7 @@ public class ModConfiguredFeatures {
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         register(context, ELSEWHERE_WOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.ELSEWHERE_WOOD),
-                new BendingTrunkPlacer(3, 3, 4, 2, ConstantInt.of(5)),
+                new ForkingTrunkPlacer(3, 3, 4),
 
                 BlockStateProvider.simple(ModBlocks.ELSEWHERE_LEAVES),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3), 3),

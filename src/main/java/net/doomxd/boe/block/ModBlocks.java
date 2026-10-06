@@ -13,6 +13,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -28,17 +29,21 @@ public class ModBlocks {
     public static final Block LESOLITE_ORE = registerBlock("lesolite_ore",
             properties -> new Block(properties.strength(4f)
                     .requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
     public static final Block ELSEWHERE_WOOD_PLANKS = registerBlock("elsewhere_wood_planks",
             properties -> new ElsewhereBlock(properties.strength(1f)
-                    .sound(SoundType.WOOD).noOcclusion().ignitedByLava()));
+                    .sound(SoundType.WOOD).noOcclusion().ignitedByLava()
+                    .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
 
     public static final Block ELSEWHERE_LEAVES = registerBlock("elsewhere_leaves",
             properties -> new ElsewhereBlock(properties.strength(0.1f)
-                    .sound(SoundType.CHERRY_LEAVES).noOcclusion().ignitedByLava()));
+                    .sound(SoundType.CHERRY_LEAVES).noOcclusion().ignitedByLava()
+                    .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
 
     public static final Block ELSEWHERE_WOOD = registerBlock("elsewhere_wood",
             properties -> new ElsewhereBlock(properties.strength(1f)
-                    .sound(SoundType.WOOD).noOcclusion().ignitedByLava()));
+                    .sound(SoundType.WOOD).noOcclusion().ignitedByLava()
+                    .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
 
     public static final Block ELSEWHERE_WOOD_SAPLING = registerBlock("elsewhere_wood_sapling",
             properties -> new SaplingBlock(ModTreeGrowers.ELSEWHERE_WOOD, properties.mapColor(MapColor.PLANT)
