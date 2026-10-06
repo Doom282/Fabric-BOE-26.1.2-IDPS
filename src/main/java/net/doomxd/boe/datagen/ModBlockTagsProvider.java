@@ -22,5 +22,7 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider{
         valueLookupBuilder(BlockTags.PLANKS).add(ModBlocks.ELSEWHERE_WOOD_PLANKS);
         valueLookupBuilder(BlockTags.LOGS_THAT_BURN).add(ModBlocks.ELSEWHERE_WOOD);
         valueLookupBuilder(BlockTags.LEAVES).add(ModBlocks.ELSEWHERE_LEAVES);
+        valueLookupBuilder(BlockTags.SAPLINGS).add(ModBlocks.ELSEWHERE_WOOD_SAPLING);
+        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModBlocks.POTTED_ELSEWHERE_WOOD_SAPLING);
     }
 }

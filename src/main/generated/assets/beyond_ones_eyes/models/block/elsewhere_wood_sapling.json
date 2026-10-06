@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "beyond_ones_eyes:block/elsewhere_wood_sapling"
+  }
+}

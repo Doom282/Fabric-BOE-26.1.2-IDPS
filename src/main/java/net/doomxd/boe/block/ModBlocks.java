@@ -2,6 +2,7 @@ package net.doomxd.boe.block;
 
 import net.doomxd.boe.BeyondOnesEyes;
 import net.doomxd.boe.block.custom.ElsewhereBlock;
+import net.doomxd.boe.worldgen.tree.ModTreeGrowers;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -12,8 +13,11 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 
 import java.util.function.Function;
 
@@ -35,12 +39,24 @@ public class ModBlocks {
     public static final Block ELSEWHERE_WOOD = registerBlock("elsewhere_wood",
             properties -> new ElsewhereBlock(properties.strength(1f)
                     .sound(SoundType.WOOD).noOcclusion().ignitedByLava()));
+
+    public static final Block ELSEWHERE_WOOD_SAPLING = registerBlock("elsewhere_wood_sapling",
+            properties -> new SaplingBlock(ModTreeGrowers.ELSEWHERE_WOOD, properties.mapColor(MapColor.PLANT)
+                    .noOcclusion().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+
+    public static final Block POTTED_ELSEWHERE_WOOD_SAPLING = registerBlockWithoutBlockItem("potted_elsewhere_wood_sapling",
+            properties -> new SaplingBlock(ModTreeGrowers.ELSEWHERE_WOOD, properties.mapColor(MapColor.PLANT)
+                    .noOcclusion().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     /**To add elsehwhere blocks
     add the block here
      add to creative menus below and in ModCreativeModeTabs
      add textures and make them work with datagen in ModModelProvider
      add the block to the list in ModBlockEntities
     **/
+    private static Block registerBlockWithoutBlockItem(String name, Function<BlockBehaviour.Properties, Block> function) {
+        Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(BeyondOnesEyes.MOD_ID, name))));
+        return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(BeyondOnesEyes.MOD_ID, name), toRegister);
+    }
 
     private static void registerBlockItem(String name, Block block)
     {
@@ -65,6 +81,7 @@ public class ModBlocks {
             output.accept(ELSEWHERE_WOOD_PLANKS);
             output.accept(ELSEWHERE_WOOD);
             output.accept(ELSEWHERE_LEAVES);
+            output.accept(ELSEWHERE_WOOD_SAPLING);
         });
     }
 }
