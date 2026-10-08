@@ -16,5 +16,8 @@ public class ModWorldGeneration {
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(Biomes.PLAINS, Biomes.MEADOW, Biomes.STONY_PEAKS, Biomes.STONY_SHORE),
                 GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.ELSEWOOD_PLACED_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.excludeByKey(Biomes.DEEP_DARK), GenerationStep.Decoration.UNDERGROUND_ORES,
+                ModPlacedFeatures.OVERWORLD_LESOLITE_ORE_PLACED_KEY);
     }
 }

@@ -12,7 +12,6 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
@@ -26,9 +25,14 @@ public class ModPlacedFeatures {
     // How placed, how many placed, where placed.
 
     public static final ResourceKey<PlacedFeature> ELSEWOOD_PLACED_KEY = registerKey("elsewood_placed");
+    public static final ResourceKey<PlacedFeature> OVERWORLD_LESOLITE_ORE_PLACED_KEY = registerKey("lesolite_ore_placed");
+
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
+
+        register(context, OVERWORLD_LESOLITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_LESOLITE_ORE),
+                OrePlacements.rareOrePlacement(12, HeightRangePlacement.triangle(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(0))));
 
         register(context, ELSEWOOD_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.ELSEWHERE_WOOD_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),

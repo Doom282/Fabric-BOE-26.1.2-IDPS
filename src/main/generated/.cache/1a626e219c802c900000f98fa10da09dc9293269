@@ -1,3 +1,5 @@
 // 26.1.2	-999999999-01-01T00:00:00	Beyond Ones Eyes/TutorialMod Data Provider
-bf0d3f34c06b59e8717dcbdd399a5c3a9fa3adf7 data/beyond_ones_eyes/worldgen/configured_feature/elsewhere_wood_key.json
+b12286394946eaf3173e4c3d63605b989d5edd83 data/beyond_ones_eyes/worldgen/configured_feature/elsewhere_wood_key.json
+2944200b4b3634343f011b151644f2ed141a2f6d data/beyond_ones_eyes/worldgen/configured_feature/overworld_lesolite_ore.json
 43480ee112854ab156327da79bf056d3c3681f77 data/beyond_ones_eyes/worldgen/placed_feature/elsewood_placed.json
+f4fab5677be830765c38d91eea3c07a5e992082d data/beyond_ones_eyes/worldgen/placed_feature/lesolite_ore_placed.json

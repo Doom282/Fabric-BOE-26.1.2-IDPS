@@ -28,6 +28,7 @@
 	"mixins": [
 		"beyond_ones_eyes.mixins.json"
 	],
+	"accessWidener": "beyond_ones_eyes.classtweaker",
 	"depends": {
 		"fabricloader": ">=0.19.3",
 		"minecraft": "~26.1.2",
