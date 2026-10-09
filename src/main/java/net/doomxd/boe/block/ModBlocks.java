@@ -9,13 +9,12 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SaplingBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -27,7 +26,7 @@ public class ModBlocks {
 
     //WHENEVER YOU ADD A BLOCK OR ITEM ADD IT TO CREATIVE TAB
     public static final Block LESOLITE_ORE = registerBlock("lesolite_ore",
-            properties -> new Block(properties.strength(4f)
+            properties -> new DropExperienceBlock(UniformInt.of(2, 8), properties.strength(4f)
                     .requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
     public static final Block ELSEWHERE_WOOD_PLANKS = registerBlock("elsewhere_wood_planks",

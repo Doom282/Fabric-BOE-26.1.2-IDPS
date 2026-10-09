@@ -1,11 +1,16 @@
 package net.doomxd.boe.block.custom;
 
 import com.mojang.serialization.MapCodec;
+import net.doomxd.boe.block.ModBlocks;
 import net.doomxd.boe.block.entity.ModBlockEntities;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.valueproviders.IntProvider;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.RenderShape;
@@ -19,6 +24,7 @@ import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 
 public class ElsewhereBlock extends BaseEntityBlock {
+    private final IntProvider xpRange = UniformInt.of(0, 2);
 
     public ElsewhereBlock(Properties properties) {
         super(properties);
@@ -85,6 +91,14 @@ public class ElsewhereBlock extends BaseEntityBlock {
             }
             return Shapes.block();
         }
+    }
+
+    protected void spawnAfterBreak(final BlockState state, final ServerLevel level, final BlockPos pos, final ItemStack tool, final boolean dropExperience) {
+        super.spawnAfterBreak(state, level, pos, tool, dropExperience);
+        if (dropExperience && state.equals(ModBlocks.ELSEWHERE_LEAVES.defaultBlockState())) {
+            this.tryDropExperience(level, pos, tool, this.xpRange);
+        }
+
     }
 
     @Override
