@@ -1,7 +1,6 @@
 package net.doomxd.boe.datagen;
 
 import net.doomxd.boe.block.ModBlocks;
-import net.doomxd.boe.tags.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
@@ -16,13 +15,12 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider{
     }
     @Override
     protected void addTags(HolderLookup.Provider registries) {
-        valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.LESOLITE_ORE);
-        valueLookupBuilder(BlockTags.LOGS).add(ModBlocks.ELSEWHERE_WOOD);
-        valueLookupBuilder(BlockTags.PLANKS).add(ModBlocks.ELSEWHERE_WOOD_PLANKS);
-        valueLookupBuilder(BlockTags.LOGS_THAT_BURN).add(ModBlocks.ELSEWHERE_WOOD);
-        valueLookupBuilder(BlockTags.LEAVES).add(ModBlocks.ELSEWHERE_LEAVES);
-        valueLookupBuilder(BlockTags.SAPLINGS).add(ModBlocks.ELSEWHERE_WOOD_SAPLING);
-        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModBlocks.POTTED_ELSEWHERE_WOOD_SAPLING);
+        tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(ModBlocks.getRK(ModBlocks.LESOLITE_ORE));
+        tag(BlockTags.LOGS).add(ModBlocks.getRK(ModBlocks.ELSEWHERE_WOOD));
+        tag(BlockTags.PLANKS).add(ModBlocks.getRK(ModBlocks.ELSEWHERE_WOOD_PLANKS));
+        tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(ModBlocks.getRK(ModBlocks.ELSEWHERE_WOOD));
+        tag(BlockTags.LEAVES).add(ModBlocks.getRK(ModBlocks.ELSEWHERE_LEAVES));
+        tag(BlockTags.FLOWER_POTS).add(ModBlocks.getRK(ModBlocks.POTTED_ELSEWHERE_WOOD_SAPLING));
     }
 }

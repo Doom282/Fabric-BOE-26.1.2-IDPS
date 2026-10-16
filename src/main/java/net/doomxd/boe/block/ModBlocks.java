@@ -9,7 +9,6 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -28,6 +27,8 @@ public class ModBlocks {
     public static final Block LESOLITE_ORE = registerBlock("lesolite_ore",
             properties -> new DropExperienceBlock(UniformInt.of(2, 8), properties.strength(4f)
                     .requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
+
 
     public static final Block ELSEWHERE_WOOD_PLANKS = registerBlock("elsewhere_wood_planks",
             properties -> new ElsewhereBlock(properties.strength(1f)
@@ -62,6 +63,10 @@ public class ModBlocks {
         return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(BeyondOnesEyes.MOD_ID, name), toRegister);
     }
 
+    public static ResourceKey<Block> getRK(Block block)
+    {
+        return BuiltInRegistries.BLOCK.getResourceKey(block).get();
+    }
     private static void registerBlockItem(String name, Block block)
     {
         Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(BeyondOnesEyes.MOD_ID, name),

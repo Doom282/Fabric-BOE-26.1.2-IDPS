@@ -8,8 +8,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -20,7 +18,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.EntityCollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 
 public class ElsewhereBlock extends BaseEntityBlock {
@@ -49,10 +46,10 @@ public class ElsewhereBlock extends BaseEntityBlock {
             return Shapes.empty();
         }
         else {
-            if(entityCollisionContext.getEntity() !=null && entityCollisionContext.getEntity().is(EntityType.PLAYER))
+            if(entityCollisionContext.getEntity() !=null)
             {
-                Entity player = entityCollisionContext.getEntity();
-                if(player.isCrouching())
+                Entity goober = entityCollisionContext.getEntity();
+                if(goober.isCrouching())
                 {
                     return Shapes.block();
                 }
@@ -77,10 +74,10 @@ public class ElsewhereBlock extends BaseEntityBlock {
             return Shapes.empty();
         }
         else {
-            if(entityCollisionContext.getEntity() !=null && entityCollisionContext.getEntity().is(EntityType.PLAYER))
+            if(entityCollisionContext.getEntity() !=null)
             {
-                Entity player = entityCollisionContext.getEntity();
-                if(player.isCrouching())
+                Entity goober = entityCollisionContext.getEntity();
+                if(goober.isCrouching())
                 {
                     return Shapes.block();
                 }

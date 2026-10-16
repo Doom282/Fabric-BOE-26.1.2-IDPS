@@ -2,13 +2,11 @@ package net.doomxd.boe.item;
 
 import net.doomxd.boe.BeyondOnesEyes;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
-import net.fabricmc.fabric.api.item.v1.FabricItem;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 
@@ -17,6 +15,11 @@ import java.util.function.Function;
 public class ModItems {
     public static final Item LESOLITE = registerItem("lesolite", Item::new);
     public static final Item LESOLITE_POOR_LENS = registerItem("lesolite_poor_lens", Item::new);
+
+    public static ResourceKey<Item> getRK(Item item)
+    {
+        return BuiltInRegistries.ITEM.getResourceKey(item).get();
+    }
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(BeyondOnesEyes.MOD_ID, name),
