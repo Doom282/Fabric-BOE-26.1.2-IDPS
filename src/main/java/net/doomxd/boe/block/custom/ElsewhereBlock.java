@@ -3,11 +3,14 @@ package net.doomxd.boe.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.doomxd.boe.block.ModBlocks;
 import net.doomxd.boe.block.entity.ModBlockEntities;
+import net.doomxd.boe.effect.ModEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -49,7 +52,7 @@ public class ElsewhereBlock extends BaseEntityBlock {
             if(entityCollisionContext.getEntity() !=null)
             {
                 Entity goober = entityCollisionContext.getEntity();
-                if(goober.isCrouching())
+                if(goober.asLivingEntity()!= null && goober.asLivingEntity().hasEffect(ModEffects.OPENED_EYES))
                 {
                     return Shapes.block();
                 }
@@ -77,7 +80,7 @@ public class ElsewhereBlock extends BaseEntityBlock {
             if(entityCollisionContext.getEntity() !=null)
             {
                 Entity goober = entityCollisionContext.getEntity();
-                if(goober.isCrouching())
+                if(goober.asLivingEntity()!= null && goober.asLivingEntity().hasEffect(ModEffects.OPENED_EYES))
                 {
                     return Shapes.block();
                 }

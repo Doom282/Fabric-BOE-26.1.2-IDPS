@@ -3,6 +3,7 @@ package net.doomxd.boe.block.entity.renderer;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.doomxd.boe.block.custom.ElsewhereBlock;
 import net.doomxd.boe.block.entity.custom.ElsewhereBlockEntity;
+import net.doomxd.boe.effect.ModEffects;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.Sheets;
@@ -47,7 +48,7 @@ public class ElsewhereBlockEntityRenderer implements BlockEntityRenderer<Elsewhe
     public void submit(ElseworldBlockEntityRenderState state, PoseStack matrices, SubmitNodeCollector queue, CameraRenderState cameraState) {
         ClientLevel level = Minecraft.getInstance().level;
         assert Minecraft.getInstance().player != null;
-        if(Minecraft.getInstance().player.isCrouching()) {
+        if(Minecraft.getInstance().player.hasEffect(ModEffects.OPENED_EYES)) {
 
             state.blockModel.submit(matrices, queue, state.lightCoords, OverlayTexture.NO_OVERLAY, 0);
             //this^ works fine without popPose

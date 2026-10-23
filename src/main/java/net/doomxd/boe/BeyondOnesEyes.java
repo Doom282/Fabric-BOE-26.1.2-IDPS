@@ -3,6 +3,7 @@ package net.doomxd.boe;
 import net.doomxd.boe.block.ModBlocks;
 import net.doomxd.boe.block.entity.ModBlockEntities;
 import net.doomxd.boe.creativemodetab.ModCreativeModeTabs;
+import net.doomxd.boe.effect.ModEffects;
 import net.doomxd.boe.item.ModItems;
 import net.doomxd.boe.worldgen.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
@@ -31,6 +32,7 @@ public class BeyondOnesEyes implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModBlockEntities.registerBlockEntities();
 		ModWorldGeneration.generateModWorldGen();
+		ModEffects.registerEffects();
 	}
 
 	public static Identifier id(String path) {
