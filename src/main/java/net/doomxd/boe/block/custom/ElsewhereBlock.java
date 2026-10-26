@@ -5,14 +5,18 @@ import net.doomxd.boe.block.ModBlocks;
 import net.doomxd.boe.block.entity.ModBlockEntities;
 import net.doomxd.boe.effect.ModEffects;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityTypes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.effects.SpawnParticlesEffect;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -93,6 +97,13 @@ public class ElsewhereBlock extends BaseEntityBlock {
         }
     }
 
+    @Override
+    protected void spawnDestroyParticles(Level level, Player player, BlockPos pos, BlockState state) {
+
+        level.addParticle(ParticleTypes.END_ROD, pos.getX(), pos.getY(), pos.getZ(), 0, 0, 0);
+        super.spawnDestroyParticles(level, player, pos, state);
+    }
+
     protected void spawnAfterBreak(final BlockState state, final ServerLevel level, final BlockPos pos, final ItemStack tool, final boolean dropExperience) {
         super.spawnAfterBreak(state, level, pos, tool, dropExperience);
         if (dropExperience && state.equals(ModBlocks.ELSEWHERE_LEAVES.defaultBlockState())) {
@@ -110,6 +121,8 @@ public class ElsewhereBlock extends BaseEntityBlock {
     protected MapCodec<? extends BaseEntityBlock> codec() {
         return simpleCodec(ElsewhereBlock::new);
     }
+
+
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos worldPosition, BlockState blockState) {

@@ -6,6 +6,9 @@
   "block.beyond_ones_eyes.elsewhere_wood": "Elsewhere Wood Log",
   "block.beyond_ones_eyes.elsewhere_leaves": "Elsewhere Leaves",
   "block.beyond_ones_eyes.elsewhere_wood_sapling": "Elsewhere Wood Sapling",
+  "block.beyond_ones_eyes.potted_elsewhere_wood_sapling": "Potted Elsewhere Wood Sapling",
+  "effect.beyond_ones_eyes.opened_eyes":"Opened Eyes",
+  "effect.beyond_ones_eyes.opened_eyes.description":"Allows you to see into the elsewhere",
 
   "creativemodetab.beyond_ones_eyes.boe_items": "Beyond One's Eyes"
 }
