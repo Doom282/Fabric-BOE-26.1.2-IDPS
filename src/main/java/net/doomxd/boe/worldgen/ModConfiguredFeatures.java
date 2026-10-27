@@ -41,9 +41,9 @@ public class ModConfiguredFeatures {
 
         register(context, ELSEWHERE_WOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.ELSEWHERE_WOOD),
-                new ForkingTrunkPlacer(8, 6,9),
+                new ForkingTrunkPlacer(4, 1,2),
                 BlockStateProvider.simple(ModBlocks.ELSEWHERE_LEAVES),
-                new BlobFoliagePlacer(UniformInt.of(3,5), UniformInt.of(1,2), 2),
+                new BlobFoliagePlacer(UniformInt.of(2,4), UniformInt.of(1,2), 2),
                 new TwoLayersFeatureSize(1, 0, 2), TreeConfiguration.defaultPlaceBelowTreeTrunkProvider(context.lookup(Registries.BIOME))).ignoreVines().build());}
 
     /**

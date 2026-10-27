@@ -99,9 +99,10 @@ public class ElsewhereBlock extends BaseEntityBlock {
 
     @Override
     protected void spawnDestroyParticles(Level level, Player player, BlockPos pos, BlockState state) {
-
-        level.addParticle(ParticleTypes.END_ROD, pos.getX(), pos.getY(), pos.getZ(), 0, 0, 0);
-        super.spawnDestroyParticles(level, player, pos, state);
+        for(int i = 0; i<8; i++)
+        {
+            level.addParticle(ParticleTypes.END_ROD, pos.getX()+Math.random()-0.5, pos.getY()+Math.random()-0.5, pos.getZ()+Math.random()-0.5, Math.random()-0.5, Math.random()-0.5, Math.random()-0.5);
+        }
     }
 
     protected void spawnAfterBreak(final BlockState state, final ServerLevel level, final BlockPos pos, final ItemStack tool, final boolean dropExperience) {
