@@ -39,7 +39,10 @@
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "beyond_ones_eyes:elsewhere_leaves"
+        "Name": "beyond_ones_eyes:elsewhere_leaves",
+        "Properties": {
+          "breaking": "false"
+        }
       }
     },
     "ignore_vines": true,
@@ -56,7 +59,10 @@
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "beyond_ones_eyes:elsewhere_wood"
+        "Name": "beyond_ones_eyes:elsewhere_wood",
+        "Properties": {
+          "breaking": "false"
+        }
       }
     }
   }
