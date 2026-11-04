@@ -1,6 +1,7 @@
 package net.doomxd.boe.item;
 
 import net.doomxd.boe.BeyondOnesEyes;
+import net.doomxd.boe.item.custom.LenseItem;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -14,7 +15,7 @@ import java.util.function.Function;
 
 public class ModItems {
     public static final Item LESOLITE = registerItem("lesolite", Item::new);
-    public static final Item LESOLITE_POOR_LENS = registerItem("lesolite_poor_lens", Item::new);
+    public static final Item LESOLITE_POOR_LENS = registerItem("lesolite_poor_lens", properties -> new LenseItem(properties.durability(32), 1));
 
     public static ResourceKey<Item> getRK(Item item)
     {
