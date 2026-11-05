@@ -31,6 +31,7 @@ public class ModLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(ModBlocks.ELSEWHERE_WOOD_PLANKS);
         dropSelf(ModBlocks.ELSEWHERE_WOOD);
         dropSelf(ModBlocks.ELSEWHERE_WOOD_SAPLING);
+        dropSelf(ModBlocks.ELSEWHERE_BARRIER);
         add(ModBlocks.ELSEWHERE_LEAVES, createManyOreDrops(ModBlocks.ELSEWHERE_LEAVES, ModBlocks.ELSEWHERE_WOOD_SAPLING.asItem(), 0, 1));
         //add(ModBlocks.LESOLITE_ORE, createOreDrop(ModBlocks.LESOLITE_ORE, ModItems.LESOLITE));
         add(ModBlocks.LESOLITE_ORE, createManyOreDrops(ModBlocks.LESOLITE_ORE, ModItems.LESOLITE, 2, 3));

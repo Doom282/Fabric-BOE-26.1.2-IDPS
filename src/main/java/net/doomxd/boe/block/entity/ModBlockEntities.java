@@ -3,6 +3,7 @@ package net.doomxd.boe.block.entity;
 import net.doomxd.boe.BeyondOnesEyes;
 import net.doomxd.boe.block.ModBlocks;
 import net.doomxd.boe.block.entity.custom.ElsewhereBlockEntity;
+import net.doomxd.boe.block.entity.custom.InvertedElsewhereBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -22,6 +23,16 @@ public class ModBlockEntities {
 
 
                              ).build());
+    public static final BlockEntityType<InvertedElsewhereBlockEntity> INVERTED_ELSEWORLD_BLOCK_ENTITY_BLOCK_ENTITY_TYPE =
+            Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE,
+                    Identifier.fromNamespaceAndPath(BeyondOnesEyes.MOD_ID,
+                            "inverse_elseworld_be"), FabricBlockEntityTypeBuilder
+                            .create(InvertedElsewhereBlockEntity::new, ModBlocks.ELSEWHERE_BARRIER
+                                    //list all blocks for elsewhere blocks here
+
+
+
+                            ).build());
     public static void registerBlockEntities()
     {
         BeyondOnesEyes.LOGGER.info("Registering Block Entities for" + BeyondOnesEyes.MOD_ID);

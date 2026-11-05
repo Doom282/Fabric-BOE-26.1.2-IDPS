@@ -2,6 +2,7 @@ package net.doomxd.boe;
 
 import net.doomxd.boe.block.entity.ModBlockEntities;
 import net.doomxd.boe.block.entity.renderer.ElsewhereBlockEntityRenderer;
+import net.doomxd.boe.block.entity.renderer.InvertedElsewhereBlockEntityRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
@@ -11,6 +12,7 @@ public class BeyondOnesEyesClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockEntityRenderers.register(ModBlockEntities.ELSEWORLD_BLOCK_ENTITY_BLOCK_ENTITY_TYPE, ElsewhereBlockEntityRenderer::new);
+        BlockEntityRenderers.register(ModBlockEntities.INVERTED_ELSEWORLD_BLOCK_ENTITY_BLOCK_ENTITY_TYPE, InvertedElsewhereBlockEntityRenderer::new);
         //ClientTickEvents.END_CLIENT_TICK.register(BeyondOnesEyesClient::onEndTick);
     }
 }

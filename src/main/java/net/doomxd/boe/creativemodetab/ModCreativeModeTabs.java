@@ -24,6 +24,7 @@ public class ModCreativeModeTabs {
                 output.accept(ModBlocks.ELSEWHERE_WOOD);
                 output.accept(ModBlocks.ELSEWHERE_LEAVES);
                 output.accept(ModBlocks.ELSEWHERE_WOOD_SAPLING);
+                output.accept(ModBlocks.ELSEWHERE_BARRIER);
             }).build());
 
     public static void registerModCreativeModeTabs()

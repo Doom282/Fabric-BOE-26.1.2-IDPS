@@ -2,6 +2,7 @@ package net.doomxd.boe.block;
 
 import net.doomxd.boe.BeyondOnesEyes;
 import net.doomxd.boe.block.custom.ElsewhereBlock;
+import net.doomxd.boe.block.custom.InverseElsewhereBlock;
 import net.doomxd.boe.worldgen.tree.ModTreeGrowers;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
@@ -32,6 +33,11 @@ public class ModBlocks {
 
     public static final Block ELSEWHERE_WOOD_PLANKS = registerBlock("elsewhere_wood_planks",
             properties -> new ElsewhereBlock(properties.strength(1f)
+                    .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
+                    .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
+
+    public static final Block ELSEWHERE_BARRIER = registerBlock("elsewhere_barrier",
+            properties -> new InverseElsewhereBlock(properties.strength(1f)
                     .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
                     .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
 

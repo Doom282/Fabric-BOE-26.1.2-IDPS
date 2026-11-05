@@ -21,6 +21,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockModelGenerators.createTrivialCube(ModBlocks.ELSEWHERE_WOOD_PLANKS);
         blockModelGenerators.createTrivialCube(ModBlocks.ELSEWHERE_WOOD);
         blockModelGenerators.createTrivialCube(ModBlocks.ELSEWHERE_LEAVES);
+        blockModelGenerators.createTrivialCube(ModBlocks.ELSEWHERE_BARRIER);
         blockModelGenerators.createPlantWithDefaultItem(ModBlocks.ELSEWHERE_WOOD_SAPLING,
                 ModBlocks.POTTED_ELSEWHERE_WOOD_SAPLING, BlockModelGenerators.PlantType.NOT_TINTED);
 
