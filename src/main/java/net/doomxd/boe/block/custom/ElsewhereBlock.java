@@ -70,7 +70,7 @@ public class ElsewhereBlock extends BaseEntityBlock {
             if(entityCollisionContext.getEntity() !=null)
             {
                 Entity goober = entityCollisionContext.getEntity();
-                if(goober.asLivingEntity()!= null && goober.asLivingEntity().hasEffect(ModEffects.OPENED_EYES))
+                if(goober.asLivingEntity()!= null && (goober.asLivingEntity().hasEffect(ModEffects.OPENED_EYES)|| goober.asLivingEntity().hasEffect(ModEffects.SHIFTED)))
                 {
                     return Shapes.block();
                 }
@@ -98,7 +98,7 @@ public class ElsewhereBlock extends BaseEntityBlock {
             if(entityCollisionContext.getEntity() !=null)
             {
                 Entity goober = entityCollisionContext.getEntity();
-                if(goober.asLivingEntity()!= null && goober.asLivingEntity().hasEffect(ModEffects.OPENED_EYES))
+                if(goober.asLivingEntity()!= null && (goober.asLivingEntity().hasEffect(ModEffects.OPENED_EYES)|| goober.asLivingEntity().hasEffect(ModEffects.SHIFTED)))
                 {
                     return Shapes.block();
                 }
