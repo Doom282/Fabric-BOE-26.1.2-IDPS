@@ -7,11 +7,12 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.effect.MobEffects;
 
 public class ModEffects {
     public static final Holder<MobEffect> OPENED_EYES = registerMobEffect("opened_eyes",
             new OpenedEyesEffect(MobEffectCategory.NEUTRAL, 13458603));
+    public static final Holder<MobEffect> SHIFTED = registerMobEffect("shifted",
+            new ShiftedEffect(MobEffectCategory.NEUTRAL, 13458603));
 
     private static Holder<MobEffect> registerMobEffect(String name, MobEffect effect)
     {

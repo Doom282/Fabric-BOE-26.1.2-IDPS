@@ -48,7 +48,7 @@ public class ElsewhereBlockEntityRenderer implements BlockEntityRenderer<Elsewhe
     public void submit(ElseworldBlockEntityRenderState state, PoseStack matrices, SubmitNodeCollector queue, CameraRenderState cameraState) {
         ClientLevel level = Minecraft.getInstance().level;
         assert Minecraft.getInstance().player != null;
-        if(Minecraft.getInstance().player.hasEffect(ModEffects.OPENED_EYES)) {
+        if(Minecraft.getInstance().player.hasEffect(ModEffects.OPENED_EYES)||Minecraft.getInstance().player.hasEffect(ModEffects.SHIFTED)) {
 
             state.blockModel.submit(matrices, queue, state.lightCoords, OverlayTexture.NO_OVERLAY, 0);
             //this^ works fine without popPose

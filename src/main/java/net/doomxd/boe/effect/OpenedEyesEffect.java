@@ -21,8 +21,8 @@ public class OpenedEyesEffect extends MobEffect {
 
     @Override
     public boolean applyEffectTick(ServerLevel serverLevel, LivingEntity mob, int amplification) {
-        AABB boundingbox = mob.getBoundingBox().inflate(amplification+1);
-        List<Entity> entities = serverLevel.getEntities(mob, boundingbox);
+        //AABB boundingbox = mob.getBoundingBox().inflate(amplification+1);
+        //List<Entity> entities = serverLevel.getEntities(mob, boundingbox);
 /**
         for(Entity entity : entities)
         {
