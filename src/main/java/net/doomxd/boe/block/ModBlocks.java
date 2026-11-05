@@ -25,21 +25,28 @@ public class ModBlocks {
     //Still need to add drop-ability
 
     //WHENEVER YOU ADD A BLOCK OR ITEM ADD IT TO CREATIVE TAB
+
+
+    //NORMAL BLOCKS
     public static final Block LESOLITE_ORE = registerBlock("lesolite_ore",
             properties -> new DropExperienceBlock(UniformInt.of(2, 8), properties.strength(4f)
                     .requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
 
 
+//INVERSE ELSEWHWERE BLOCKS
+    public static final Block ELSEWHERE_BARRIER = registerBlock("elsewhere_barrier",
+            properties -> new InverseElsewhereBlock(properties.strength(64.0f, 1200.0f)
+                    .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
+                    .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
+
+
+//ELSEWHERE BLOCKS
     public static final Block ELSEWHERE_WOOD_PLANKS = registerBlock("elsewhere_wood_planks",
             properties -> new ElsewhereBlock(properties.strength(1f)
                     .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
                     .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
 
-    public static final Block ELSEWHERE_BARRIER = registerBlock("elsewhere_barrier",
-            properties -> new InverseElsewhereBlock(properties.strength(1f)
-                    .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
-                    .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
 
     public static final Block ELSEWHERE_LEAVES = registerBlock("elsewhere_leaves",
             properties -> new ElsewhereBlock(properties.strength(0.1f)

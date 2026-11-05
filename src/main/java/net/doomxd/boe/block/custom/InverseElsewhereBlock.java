@@ -63,7 +63,7 @@ public class InverseElsewhereBlock extends BaseEntityBlock {
     protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         if(!(context instanceof EntityCollisionContext entityCollisionContext))
         {
-            return Shapes.empty();
+            return Shapes.block();
         }
         else {
             if(entityCollisionContext.getEntity() !=null)
@@ -71,14 +71,14 @@ public class InverseElsewhereBlock extends BaseEntityBlock {
                 Entity goober = entityCollisionContext.getEntity();
                 if(goober.asLivingEntity()!= null && goober.asLivingEntity().hasEffect(ModEffects.OPENED_EYES))
                 {
-                    return Shapes.block();
+                    return Shapes.empty();
                 }
                 else
                 {
-                    return Shapes.empty();
+                    return Shapes.block();
                 }
             }
-            return Shapes.block();
+            return Shapes.empty();
         }
     }
 
@@ -91,7 +91,7 @@ public class InverseElsewhereBlock extends BaseEntityBlock {
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         if(!(context instanceof EntityCollisionContext entityCollisionContext))
         {
-            return Shapes.empty();
+            return Shapes.block();
         }
         else {
             if(entityCollisionContext.getEntity() !=null)
@@ -99,14 +99,14 @@ public class InverseElsewhereBlock extends BaseEntityBlock {
                 Entity goober = entityCollisionContext.getEntity();
                 if(goober.asLivingEntity()!= null && goober.asLivingEntity().hasEffect(ModEffects.OPENED_EYES))
                 {
-                    return Shapes.block();
+                    return Shapes.empty();
                 }
                 else
                 {
-                    return Shapes.empty();
+                    return Shapes.block();
                 }
             }
-            return Shapes.block();
+            return Shapes.empty();
         }
     }
 
