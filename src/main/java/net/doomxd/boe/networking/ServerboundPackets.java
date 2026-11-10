@@ -8,7 +8,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 //THIS IS ON THE SERVER
 public class ServerboundPackets {
     public static void handleLensFuelPayload(LensFuelPayloadC2S lensFuelPayloadC2S, ServerPlayNetworking.Context context) {
-        net.minecraft.world.effect.MobEffectInstance see = new MobEffectInstance(ModEffects.OPENED_EYES, 400, 0, true, true);
+        net.minecraft.world.effect.MobEffectInstance see = new MobEffectInstance(ModEffects.OPENED_EYES, 3600, 0, true, true);
         context.player().addEffect(see);
     }
 }
