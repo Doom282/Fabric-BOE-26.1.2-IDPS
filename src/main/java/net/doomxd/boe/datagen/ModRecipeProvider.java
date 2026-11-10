@@ -44,6 +44,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(ModItems.LESOLITE), has(ModItems.LESOLITE))
                         .group("lesolite")
                         .save(output);
+
+
+                shaped(RecipeCategory.MISC, ModBlocks.ELSEWHERE_BARRIER.asItem())
+                        .pattern("RLR")
+                        .pattern("LLL")
+                        .pattern("RLR")
+                        .define('L', ModBlocks.ELSEWHERE_WOOD_PLANKS.asItem() )
+                        .define('R', ModItems.LESOLITE)
+                        .unlockedBy(getHasName(ModItems.LESOLITE), has(ModItems.LESOLITE))
+                        .group("lesolite")
+                        .save(output);
                 List<ItemLike> BOE_ELSEWHERE_WOOD_BLOCKS = List.of(ModBlocks.ELSEWHERE_LEAVES, ModBlocks.ELSEWHERE_WOOD, ModBlocks.ELSEWHERE_WOOD_PLANKS);
 
                 //planksFromLogs(ModBlocks.ELSEWHERE_WOOD_PLANKS, ModTags.Items.ELSEWHERE_WOOD_BLOCKS, 4);
