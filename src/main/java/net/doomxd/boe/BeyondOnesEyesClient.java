@@ -5,8 +5,10 @@ import net.doomxd.boe.block.entity.renderer.ElsewhereBlockEntityRenderer;
 import net.doomxd.boe.block.entity.renderer.InvertedElsewhereBlockEntityRenderer;
 import net.doomxd.boe.effect.ModEffects;
 import net.doomxd.boe.keymapping.ModKeyMappings;
+import net.doomxd.boe.networking.packet.LensFuelPayloadC2S;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -25,8 +27,9 @@ public class BeyondOnesEyesClient implements ClientModInitializer {
     {
         while(ModKeyMappings.ACTIVATE_LENSES.consumeClick())
         {
-                //net.minecraft.world.effect.MobEffectInstance see = new MobEffectInstance(ModEffects.OPENED_EYES, 400, 0, true, true);
-                //client.player.addEffect(see);
+            //Sends packet to server
+            //both parameters are unused as of now
+            ClientPlayNetworking.send(new LensFuelPayloadC2S("unused", 0));
         }
     }
 }
