@@ -13,6 +13,8 @@
   "effect.beyond_ones_eyes.opened_eyes":"Opened Eyes",
   "effect.beyond_ones_eyes.shifted":"Shifted",
 
+  "key.beyond_ones_eyes.activate_lenses": "Activate Lenses",
+
   "effect.beyond_ones_eyes.opened_eyes.description":"Allows you to see into the elsewhere",
   "effect.beyond_ones_eyes.shifted.description":"You have entered into the elsewhere, good luck child",
 
