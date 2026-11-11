@@ -117,13 +117,6 @@ public class InverseElsewhereBlock extends BaseEntityBlock {
     }
 
     @Override
-    protected void onProjectileHit(Level level, BlockState state, BlockHitResult blockHit, Projectile projectile) {
-        BlockPos pos = projectile.getOnPos();
-        this.poof(level, pos);
-        super.onProjectileHit(level, state, blockHit, projectile);
-    }
-
-    @Override
     protected float getDestroyProgress(BlockState state, Player player, BlockGetter level, BlockPos pos) {
         this.smolpoof(player.level(), pos);
         return super.getDestroyProgress(state, player, level, pos);
@@ -186,7 +179,7 @@ public class InverseElsewhereBlock extends BaseEntityBlock {
 **/
     @Override
     protected InteractionResult useItemOn(ItemStack itemStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-        this.poof(level, pos);
+        //this.poof(level, pos);
         state.setValue(BREAKING, true);
         return super.useItemOn(itemStack, state, level, pos, player, hand, hitResult);
     }

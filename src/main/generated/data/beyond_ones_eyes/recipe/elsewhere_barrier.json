@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "lesolite",
+  "group": "barrier",
   "key": {
     "L": "beyond_ones_eyes:elsewhere_wood_planks",
     "R": "beyond_ones_eyes:lesolite"

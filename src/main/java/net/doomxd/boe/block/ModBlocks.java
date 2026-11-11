@@ -50,8 +50,10 @@ public class ModBlocks {
 
     public static final Block ELSEWHERE_LEAVES = registerBlock("elsewhere_leaves",
             properties -> new ElsewhereBlock(properties.strength(0.1f)
-                    .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
-                    .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
+                    .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava().noOcclusion()
+                    .pushReaction(PushReaction.DESTROY).isRedstoneConductor(Blocks::never)
+                    .mapColor(MapColor.PLANT).isValidSpawn(Blocks::never)
+                    .isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
 
     public static final Block ELSEWHERE_WOOD = registerBlock("elsewhere_wood",
             properties -> new ElsewhereBlock(properties.strength(1f)

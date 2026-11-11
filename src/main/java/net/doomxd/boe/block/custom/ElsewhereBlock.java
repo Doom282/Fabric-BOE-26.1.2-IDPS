@@ -47,6 +47,10 @@ public class ElsewhereBlock extends BaseEntityBlock {
         registerDefaultState(defaultBlockState().setValue(BREAKING, false));
     }
 
+    public void fallOn(final Level level, final BlockState state, final BlockPos pos, final Entity entity, final double fallDistance) {
+            entity.causeFallDamage(fallDistance, 0.0F, level.damageSources().fall());
+    }
+
 
     protected boolean propagatesSkylightDown(final BlockState state) {
         return state.getFluidState().isEmpty();
@@ -187,7 +191,7 @@ public class ElsewhereBlock extends BaseEntityBlock {
 **/
     @Override
     protected InteractionResult useItemOn(ItemStack itemStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-        this.poof(level, pos);
+        //this.poof(level, pos);
         state.setValue(BREAKING, true);
         return super.useItemOn(itemStack, state, level, pos, player, hand, hitResult);
     }
