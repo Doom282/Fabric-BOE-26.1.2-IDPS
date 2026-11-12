@@ -53,7 +53,7 @@ public class ModBlocks {
                     .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava().noOcclusion()
                     .pushReaction(PushReaction.DESTROY).isRedstoneConductor(Blocks::never)
                     .mapColor(MapColor.PLANT).isValidSpawn(Blocks::never)
-                    .isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
+                    .isSuffocating(Blocks::never).isViewBlocking(Blocks::never), true));
 
     public static final Block ELSEWHERE_WOOD = registerBlock("elsewhere_wood",
             properties -> new ElsewhereBlock(properties.strength(1f)

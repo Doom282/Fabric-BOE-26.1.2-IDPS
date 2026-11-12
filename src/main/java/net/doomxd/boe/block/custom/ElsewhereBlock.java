@@ -35,6 +35,7 @@ import org.jspecify.annotations.Nullable;
 public class ElsewhereBlock extends BaseEntityBlock {
     private final IntProvider xpRange = UniformInt.of(0, 2);
     public static final BooleanProperty BREAKING = BooleanProperty.create("breaking");
+    private final boolean dontdofalldmg;
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
@@ -43,14 +44,27 @@ public class ElsewhereBlock extends BaseEntityBlock {
 
     public ElsewhereBlock(Properties properties) {
         super(properties);
+        dontdofalldmg=false;
+        registerDefaultState(defaultBlockState().setValue(BREAKING, false));
+    }
+
+    public ElsewhereBlock(Properties properties, boolean dontdofalldmg) {
+        super(properties);
+        this.dontdofalldmg = dontdofalldmg;
 
         registerDefaultState(defaultBlockState().setValue(BREAKING, false));
     }
 
-    public void fallOn(final Level level, final BlockState state, final BlockPos pos, final Entity entity, final double fallDistance) {
+    @Override
+    public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, double fallDistance) {
+        if(dontdofalldmg)
+        {
             entity.causeFallDamage(fallDistance, 0.0F, level.damageSources().fall());
+        }
+        else{
+            super.fallOn(level, state, pos, entity, fallDistance);
+        }
     }
-
 
     protected boolean propagatesSkylightDown(final BlockState state) {
         return state.getFluidState().isEmpty();
