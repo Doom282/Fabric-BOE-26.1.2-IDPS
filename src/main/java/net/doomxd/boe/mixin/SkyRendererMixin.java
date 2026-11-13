@@ -21,11 +21,17 @@ abstract class SkyRendererMixin {
     @Inject(method = "extractRenderState", at = @At(value="TAIL"))
     private void getExtractRenderStateMixin(ClientLevel level, float partialTicks, Camera camera, SkyRenderState state, CallbackInfo ci)
     {
-        if (state.skybox != DimensionType.Skybox.NONE && state.skybox!= DimensionType.Skybox.END && (Minecraft.getInstance().player.hasEffect(ModEffects.OPENED_EYES)|| Minecraft.getInstance().player.hasEffect(ModEffects.SHIFTED))) {
-            EnvironmentAttributeProbe attributeProbe = camera.attributeProbe();
-            state.skyColor = Color.PINK.hashCode();
-            //the sunrise and sunsetcolor just changes the color of the sky around the sun
-            // state.sunriseAndSunsetColor = Color.MAGENTA.hashCode();
+        if (state.skybox != DimensionType.Skybox.NONE && state.skybox != DimensionType.Skybox.END) {
+            assert Minecraft.getInstance().player != null;
+            if (Minecraft.getInstance().player.hasEffect(ModEffects.OPENED_EYES)) {
+                state.skyColor = Color.PINK.hashCode();
+                //the sunrise and sunsetcolor just changes the color of the sky around the sun
+                // state.sunriseAndSunsetColor = Color.MAGENTA.hashCode();
+            }
+            else if (Minecraft.getInstance().player.hasEffect(ModEffects.SHIFTED))
+            {
+                state.skyColor = Color.WHITE.hashCode();
+            }
         }
     }
 }
