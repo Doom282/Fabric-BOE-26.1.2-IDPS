@@ -24,7 +24,8 @@ abstract class LightmapRenderStateExtractorMixin {
     @Inject(method = "extract", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/profiling/ProfilerFiller;pop()V"))
     private void getExtractMixin(LightmapRenderState renderState, float partialTicks, CallbackInfo ci){
         if(minecraft.player.hasEffect(ModEffects.OPENED_EYES) || minecraft.player.hasEffect(ModEffects.SHIFTED)) {
-            renderState.skyLightColor = new Vector3f(0.94F, 0.57F, 0.97F);
+            //renderState.skyLightColor = new Vector3f(0.94F, 0.57F, 0.97F);
+            renderState.skyLightColor = new Vector3f(0.9603F, 0.7103F, 0.8651F);
         }
     }
 
