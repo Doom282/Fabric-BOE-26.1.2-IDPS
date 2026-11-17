@@ -16,12 +16,15 @@ import net.minecraft.world.entity.Entity;
 public class ServerboundPackets {
     public static void handleLensFuelPayload(LensFuelPayloadC2S lensFuelPayloadC2S, ServerPlayNetworking.Context context) {
 
-        net.minecraft.world.effect.MobEffectInstance woozy = new MobEffectInstance(MobEffects.NAUSEA, 60, 3, true, true);
+        net.minecraft.world.effect.MobEffectInstance woozy = new MobEffectInstance(MobEffects.DARKNESS, 60, 3, false, false);
+        net.minecraft.world.effect.MobEffectInstance blind = new MobEffectInstance(MobEffects.BLINDNESS, 60, 3, false, false);
+
         net.minecraft.world.effect.MobEffectInstance see = new MobEffectInstance(ModEffects.OPENED_EYES, 3600, 0, true, true);
         if(!context.player().hasEffect(ModEffects.OPENED_EYES) && !context.player().hasEffect(ModEffects.SHIFTED)) {
             if(context.player().isCreative())
             {
                 context.player().addEffect(woozy);
+                context.player().addEffect(blind);
                 context.player().addEffect(see);
             }
             else if(context.player().getMainHandItem().is(ModItems.LESOLITE))
