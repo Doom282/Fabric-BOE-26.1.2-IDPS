@@ -1,0 +1,32 @@
+package net.doomxd.boe.utility;
+
+import net.doomxd.boe.effect.ModEffects;
+import net.doomxd.boe.timer.ModAddEffectTimer;
+import net.doomxd.boe.timer.ModRemoveEffectTimer;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+
+public class ModUtilityMethods {
+
+    public static void fade(ServerPlayer player)
+    {
+        net.minecraft.world.effect.MobEffectInstance woozy = new MobEffectInstance(MobEffects.DARKNESS, 60, 12, false, false);
+        net.minecraft.world.effect.MobEffectInstance blind = new MobEffectInstance(MobEffects.BLINDNESS, 10, 20, false, false);
+        net.minecraft.world.effect.MobEffectInstance see = new MobEffectInstance(ModEffects.OPENED_EYES, 3600, 0, true, true);
+
+        player.addEffect(woozy);
+        ModAddEffectTimer.INSTANCE.addEffectTimer(10, blind, player);
+        ModAddEffectTimer.INSTANCE.addEffectTimer(30, see, player);
+    }
+    public static void fadeOut(ServerPlayer player)
+    {
+        net.minecraft.world.effect.MobEffectInstance woozy = new MobEffectInstance(MobEffects.DARKNESS, 60, 12, false, false);
+        net.minecraft.world.effect.MobEffectInstance blind = new MobEffectInstance(MobEffects.BLINDNESS, 10, 20, false, false);
+        net.minecraft.world.effect.MobEffectInstance see = new MobEffectInstance(ModEffects.OPENED_EYES, 3600, 0, true, true);
+
+        player.addEffect(woozy);
+        ModAddEffectTimer.INSTANCE.addEffectTimer(10, blind, player);
+        ModRemoveEffectTimer.INSTANCE.removeEffectTimer(30, see, player);
+    }
+}

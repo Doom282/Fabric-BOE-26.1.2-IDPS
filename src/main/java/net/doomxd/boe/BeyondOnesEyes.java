@@ -6,7 +6,8 @@ import net.doomxd.boe.creativemodetab.ModCreativeModeTabs;
 import net.doomxd.boe.effect.ModEffects;
 import net.doomxd.boe.item.ModItems;
 import net.doomxd.boe.networking.ModPackets;
-import net.doomxd.boe.timer.ModFunctionTimer;
+import net.doomxd.boe.timer.ModAddEffectTimer;
+import net.doomxd.boe.timer.ModRemoveEffectTimer;
 import net.doomxd.boe.worldgen.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
@@ -36,7 +37,8 @@ public class BeyondOnesEyes implements ModInitializer {
 		ModWorldGeneration.generateModWorldGen();
 		ModEffects.registerEffects();
 		ModPackets.registerPackets();
-		ModFunctionTimer.register();
+		ModAddEffectTimer.register();
+		ModRemoveEffectTimer.register();
 
 	}
 

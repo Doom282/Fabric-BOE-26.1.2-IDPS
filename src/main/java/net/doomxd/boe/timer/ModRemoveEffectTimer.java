@@ -5,26 +5,26 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 
-public class ModFunctionTimer implements ServerTickEvents.EndTick {
-    public static final ModFunctionTimer INSTANCE = new ModFunctionTimer();
+public class ModRemoveEffectTimer implements ServerTickEvents.EndTick {
+    public static final ModRemoveEffectTimer INSTANCE = new ModRemoveEffectTimer();
     private long ticksUntilSomething;
     private MobEffectInstance effectInstance;
     private ServerPlayer player;
+    private String action;
 
 
-    public void setEffectTimer(long ticksUntilSomething, MobEffectInstance effectInstance, ServerPlayer player) {
+    public void removeEffectTimer(long ticksUntilSomething, MobEffectInstance effectInstance, ServerPlayer player) {
         this.ticksUntilSomething = ticksUntilSomething;
         this.effectInstance = effectInstance;
         this.player = player;
-
     }
 
     @Override
     public void onEndTick(MinecraftServer server) {
         if (--this.ticksUntilSomething == 0L) {
-            if(effectInstance!=null && player != null)
+            if(effectInstance!=null && player != null )
             {
-                player.addEffect(effectInstance);
+                player.removeEffect(effectInstance.getEffect());
             }
             // If you want to repeat this, reset ticksUntilSomething here.
         }
