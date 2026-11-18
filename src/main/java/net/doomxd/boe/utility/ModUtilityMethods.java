@@ -11,9 +11,9 @@ public class ModUtilityMethods {
 
     public static void fade(ServerPlayer player)
     {
-        net.minecraft.world.effect.MobEffectInstance woozy = new MobEffectInstance(MobEffects.DARKNESS, 60, 12, false, false);
-        net.minecraft.world.effect.MobEffectInstance blind = new MobEffectInstance(MobEffects.BLINDNESS, 10, 20, false, false);
-        net.minecraft.world.effect.MobEffectInstance see = new MobEffectInstance(ModEffects.OPENED_EYES, 3600, 0, true, true);
+        MobEffectInstance woozy = new MobEffectInstance(MobEffects.DARKNESS, 60, 12, false, false);
+        MobEffectInstance blind = new MobEffectInstance(MobEffects.BLINDNESS, 10, 20, false, false);
+        MobEffectInstance see = new MobEffectInstance(ModEffects.OPENED_EYES, 3600, 0, true, true);
 
         player.addEffect(woozy);
         ModAddEffectTimer.INSTANCE.addEffectTimer(10, blind, player);
@@ -21,9 +21,9 @@ public class ModUtilityMethods {
     }
     public static void fadeOut(ServerPlayer player)
     {
-        net.minecraft.world.effect.MobEffectInstance woozy = new MobEffectInstance(MobEffects.DARKNESS, 60, 12, false, false);
-        net.minecraft.world.effect.MobEffectInstance blind = new MobEffectInstance(MobEffects.BLINDNESS, 10, 20, false, false);
-        net.minecraft.world.effect.MobEffectInstance see = new MobEffectInstance(ModEffects.OPENED_EYES, 3600, 0, true, true);
+        MobEffectInstance woozy = new MobEffectInstance(MobEffects.DARKNESS, 60, 12, false, false);
+        MobEffectInstance blind = new MobEffectInstance(MobEffects.BLINDNESS, 10, 20, false, false);
+        MobEffectInstance see = new MobEffectInstance(ModEffects.OPENED_EYES, 3600, 0, true, true);
 
         player.addEffect(woozy);
         ModAddEffectTimer.INSTANCE.addEffectTimer(10, blind, player);
