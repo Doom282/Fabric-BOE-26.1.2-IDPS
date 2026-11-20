@@ -7,6 +7,11 @@ import net.doomxd.boe.utility.ModUtilityMethods;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+
+import java.util.Objects;
 
 //THIS IS ON THE SERVER
 public class ServerboundPackets {
@@ -14,8 +19,9 @@ public class ServerboundPackets {
 
     public static void handleLensFuelPayload(LensFuelPayloadC2S lensFuelPayloadC2S, ServerPlayNetworking.Context context) {
 
+
         if(!context.player().hasEffect(ModEffects.OPENED_EYES) && !context.player().hasEffect(ModEffects.SHIFTED)) {
-            if(context.player().isCreative())
+            if(context.player().isCreative() || (context.player().hasEffect(MobEffects.SLOWNESS) && Objects.requireNonNull(context.player().getEffect(MobEffects.SLOWNESS)).getAmplifier()==0))
             {
                 ModUtilityMethods.fade(context.player());
 
@@ -27,26 +33,10 @@ public class ServerboundPackets {
 
                 ModUtilityMethods.fade(context.player());
             }
-            else if(context.player().experienceLevel>15)
-            {
-                    int currentXpPoints = (int) (context.player().getXpNeededForNextLevel()*context.player().experienceProgress);
-                    if(context.player().experienceProgress>0.5f)
-                    {
-                        int halfsies =  (int) (context.player().getXpNeededForNextLevel()*0.5f);
-                        context.player().setExperiencePoints(currentXpPoints-halfsies);
-                    }
-                    else {
-                        context.player().setExperienceLevels(context.player().experienceLevel-1);
-                        int halfsies =  (int) (context.player().getXpNeededForNextLevel()*0.5f);
-                        context.player().setExperiencePoints(halfsies+currentXpPoints);
-                    }
-                    ModUtilityMethods.fade(context.player());
-                    context.player().level().playSound(null, context.player().getX(), context.player().getY(), context.player().getZ(), SoundEvents.PLAYER_LEVELUP, SoundSource.PLAYERS, 1f, -100f);
 
-            }
             else if(context.player().experienceLevel>=1)
             {
-                context.player().setExperienceLevels(context.player().experienceLevel-1);
+                context.player().giveExperiencePoints(-60);
                 ModUtilityMethods.fade(context.player());
                 context.player().level().playSound(null, context.player().getX(), context.player().getY(), context.player().getZ(), SoundEvents.PLAYER_LEVELUP, SoundSource.PLAYERS, 1f, -100f);
 

@@ -4,6 +4,7 @@ import net.doomxd.boe.effect.ModEffects;
 import net.doomxd.boe.timer.ModAddEffectTimer;
 import net.doomxd.boe.timer.ModRemoveEffectTimer;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 
@@ -14,6 +15,8 @@ public class ModUtilityMethods {
         MobEffectInstance woozy = new MobEffectInstance(MobEffects.DARKNESS, 60, 12, false, false);
         MobEffectInstance blind = new MobEffectInstance(MobEffects.BLINDNESS, 10, 20, false, false);
         MobEffectInstance see = new MobEffectInstance(ModEffects.OPENED_EYES, 3600, 0, true, true);
+        MobEffectInstance slow = new MobEffectInstance(MobEffects.SLOWNESS, 60, 0, false, false);
+
 
         player.addEffect(woozy);
         ModAddEffectTimer.INSTANCE.addEffectTimer(10, blind, player);
@@ -24,9 +27,10 @@ public class ModUtilityMethods {
         MobEffectInstance woozy = new MobEffectInstance(MobEffects.DARKNESS, 60, 12, false, false);
         MobEffectInstance blind = new MobEffectInstance(MobEffects.BLINDNESS, 10, 20, false, false);
         MobEffectInstance see = new MobEffectInstance(ModEffects.OPENED_EYES, 3600, 0, true, true);
-
+        MobEffectInstance slow = new MobEffectInstance(MobEffects.SLOWNESS, 60, 0, false, false);
         player.addEffect(woozy);
         ModAddEffectTimer.INSTANCE.addEffectTimer(10, blind, player);
         ModRemoveEffectTimer.INSTANCE.removeEffectTimer(30, see, player);
+        ModAddEffectTimer.INSTANCE.addEffectTimer(31, slow, player);
     }
 }
