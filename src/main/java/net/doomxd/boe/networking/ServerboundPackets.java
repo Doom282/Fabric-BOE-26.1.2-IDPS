@@ -18,13 +18,12 @@ public class ServerboundPackets {
 
 
     public static void handleLensFuelPayload(LensFuelPayloadC2S lensFuelPayloadC2S, ServerPlayNetworking.Context context) {
-
-
+        boolean paidXp = false;
         if(!context.player().hasEffect(ModEffects.OPENED_EYES) && !context.player().hasEffect(ModEffects.SHIFTED)) {
             if(context.player().isCreative() || (context.player().hasEffect(MobEffects.SLOWNESS) && Objects.requireNonNull(context.player().getEffect(MobEffects.SLOWNESS)).getAmplifier()==0))
             {
                 ModUtilityMethods.fade(context.player());
-
+                context.player().removeEffect(MobEffects.SLOWNESS);
             }
             else if(context.player().getMainHandItem().is(ModItems.LESOLITE))
             {
@@ -33,17 +32,20 @@ public class ServerboundPackets {
 
                 ModUtilityMethods.fade(context.player());
             }
-
             else if(context.player().experienceLevel>=1)
             {
                 context.player().giveExperiencePoints(-60);
-                ModUtilityMethods.fade(context.player());
+                ModUtilityMethods.fadeSickly(context.player());
                 context.player().level().playSound(null, context.player().getX(), context.player().getY(), context.player().getZ(), SoundEvents.PLAYER_LEVELUP, SoundSource.PLAYERS, 1f, -100f);
 
             }
 
         }
         else if(context.player().hasEffect(ModEffects.OPENED_EYES)) {
+            if(context.player().hasEffect(MobEffects.NAUSEA)&& Objects.requireNonNull(context.player().getEffect(MobEffects.NAUSEA)).getAmplifier() ==0)
+            {
+                context.player().giveExperiencePoints(60);
+            }
             ModUtilityMethods.fadeOut(context.player());
         }
     }

@@ -15,12 +15,28 @@ public class ModUtilityMethods {
         MobEffectInstance woozy = new MobEffectInstance(MobEffects.DARKNESS, 60, 12, false, false);
         MobEffectInstance blind = new MobEffectInstance(MobEffects.BLINDNESS, 10, 20, false, false);
         MobEffectInstance see = new MobEffectInstance(ModEffects.OPENED_EYES, 3600, 0, true, true);
-        MobEffectInstance slow = new MobEffectInstance(MobEffects.SLOWNESS, 60, 0, false, false);
+        ModAddEffectTimer INSTANCE2 = new ModAddEffectTimer();
 
 
         player.addEffect(woozy);
         ModAddEffectTimer.INSTANCE.addEffectTimer(10, blind, player);
         ModAddEffectTimer.INSTANCE.addEffectTimer(30, see, player);
+    }
+    public static void fadeSickly(ServerPlayer player)
+    {
+        MobEffectInstance woozy = new MobEffectInstance(MobEffects.DARKNESS, 60, 12, false, false);
+        MobEffectInstance blind = new MobEffectInstance(MobEffects.BLINDNESS, 10, 20, false, false);
+        MobEffectInstance see = new MobEffectInstance(ModEffects.OPENED_EYES, 3600, 0, true, true);
+        MobEffectInstance sick = new MobEffectInstance(MobEffects.NAUSEA, 60, 0, false, false);
+
+        ModAddEffectTimer INSTANCE2 = new ModAddEffectTimer();
+
+
+        player.addEffect(woozy);
+        player.addEffect(sick);
+        ModAddEffectTimer.INSTANCE.addEffectTimer(10, blind, player);
+        ModAddEffectTimer.INSTANCE.addEffectTimer(30, see, player);
+
     }
     public static void fadeOut(ServerPlayer player)
     {
