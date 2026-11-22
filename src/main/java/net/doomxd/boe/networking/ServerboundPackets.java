@@ -45,6 +45,7 @@ public class ServerboundPackets {
             if(context.player().hasEffect(MobEffects.NAUSEA)&& Objects.requireNonNull(context.player().getEffect(MobEffects.NAUSEA)).getAmplifier() ==0)
             {
                 context.player().giveExperiencePoints(60);
+                context.player().removeEffect(MobEffects.NAUSEA);
             }
             ModUtilityMethods.fadeOut(context.player());
         }

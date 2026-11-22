@@ -27,7 +27,7 @@ public class ModUtilityMethods {
         MobEffectInstance woozy = new MobEffectInstance(MobEffects.DARKNESS, 60, 12, false, false);
         MobEffectInstance blind = new MobEffectInstance(MobEffects.BLINDNESS, 10, 20, false, false);
         MobEffectInstance see = new MobEffectInstance(ModEffects.OPENED_EYES, 3600, 0, true, true);
-        MobEffectInstance sick = new MobEffectInstance(MobEffects.NAUSEA, 60, 0, false, false);
+        MobEffectInstance sick = new MobEffectInstance(MobEffects.NAUSEA, 80, 0, false, false);
 
         ModAddEffectTimer INSTANCE2 = new ModAddEffectTimer();
 
