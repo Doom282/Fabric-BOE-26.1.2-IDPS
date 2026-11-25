@@ -1,5 +1,7 @@
 package net.doomxd.boe;
 
+import net.doomxd.boe.attachment.ModAttachments;
+import net.doomxd.boe.attribute.ModAttributes;
 import net.doomxd.boe.block.ModBlocks;
 import net.doomxd.boe.block.entity.ModBlockEntities;
 import net.doomxd.boe.creativemodetab.ModCreativeModeTabs;
@@ -39,7 +41,8 @@ public class BeyondOnesEyes implements ModInitializer {
 		ModPackets.registerPackets();
 		ModAddEffectTimer.register();
 		ModRemoveEffectTimer.register();
-
+		ModAttributes.registerAttributes();
+		ModAttachments.initialize();
 	}
 
 	public static Identifier id(String path) {

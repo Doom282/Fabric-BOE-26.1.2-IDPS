@@ -3,7 +3,9 @@
   "package": "net.doomxd.boe.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
-    "ExampleMixin"
+    "EntityMixin",
+    "ExampleMixin",
+    "LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
@@ -12,7 +14,9 @@
     "requireAnnotations": true
   },
   "client": [
+    "EntityRendererMixin",
     "LightmapRenderStateExtractorMixin",
+    "LivingEntityRendererMixin",
     "SkyRendererMixin"
   ]
 }

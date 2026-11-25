@@ -31,7 +31,7 @@ abstract class LightmapRenderStateExtractorMixin {
         else if(minecraft.player.hasEffect(ModEffects.SHIFTED))
         {
 
-            renderState.skyLightColor = new Vector3f(0.0F, 0.0F, 0.0F);
+            renderState.skyLightColor = new Vector3f(0.01F, 0.0F, 0.02F);
         }
     }
 

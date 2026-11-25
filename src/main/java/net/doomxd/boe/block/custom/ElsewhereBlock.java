@@ -183,7 +183,7 @@ public class ElsewhereBlock extends BaseEntityBlock {
     /**
     @Override
     protected boolean isRandomlyTicking(BlockState state) {
-        return (Boolean)state.getValue(BREAKING);
+        return (Boolean)state.getValue(x);
     }
 
     protected void randomTick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {

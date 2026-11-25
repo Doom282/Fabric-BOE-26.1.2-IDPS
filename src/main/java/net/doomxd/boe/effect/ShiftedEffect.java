@@ -1,5 +1,6 @@
 package net.doomxd.boe.effect;
 
+import net.doomxd.boe.attachment.ModAttachments;
 import net.doomxd.boe.utility.ModUtilityMethods;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.server.level.ServerLevel;
@@ -9,6 +10,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.LivingEntity;
@@ -33,6 +35,7 @@ public class ShiftedEffect extends MobEffect {
 
     @Override
     public boolean applyEffectTick(ServerLevel serverLevel, LivingEntity mob, int amplification) {
+        mob.setAttached(ModAttachments.IS_SHIFTED, true);
         if(mob instanceof ServerPlayer player)
         {
             if(player.experienceLevel >0)
@@ -68,6 +71,12 @@ public class ShiftedEffect extends MobEffect {
             }
         }
         return super.applyEffectTick(serverLevel, mob, amplification);
+    }
+
+    @Override
+    public void onEffectRemoved(MobEffectInstance effectInstance, LivingEntity entity) {
+        entity.setAttached(ModAttachments.IS_SHIFTED, false);
+        super.onEffectRemoved(effectInstance, entity);
     }
 
     @Override

@@ -18,5 +18,7 @@
   "effect.beyond_ones_eyes.opened_eyes.description":"Allows you to see into the elsewhere",
   "effect.beyond_ones_eyes.shifted.description":"You have entered into the elsewhere, good luck child",
 
-  "creativemodetab.beyond_ones_eyes.boe_items": "Beyond One's Eyes"
+  "creativemodetab.beyond_ones_eyes.boe_items": "Beyond One's Eyes",
+
+  "attribute.name.beyond_ones_eyes.shifted": "Shifted"
 }
