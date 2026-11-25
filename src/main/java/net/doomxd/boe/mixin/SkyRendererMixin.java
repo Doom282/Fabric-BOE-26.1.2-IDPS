@@ -30,7 +30,7 @@ abstract class SkyRendererMixin {
             }
             else if (Minecraft.getInstance().player.hasEffect(ModEffects.SHIFTED))
             {
-                state.skyColor = Color.WHITE.hashCode();
+                state.skyColor =-47872;
             }
         }
     }
