@@ -13,6 +13,8 @@ public class ModEffects {
             new OpenedEyesEffect(MobEffectCategory.NEUTRAL, 13458603));
     public static final Holder<MobEffect> SHIFTED = registerMobEffect("shifted",
             new ShiftedEffect(MobEffectCategory.NEUTRAL, 13458603));
+    public static final Holder<MobEffect> FRAYING = registerMobEffect("fraying",
+            new FrayingEffect(MobEffectCategory.HARMFUL, 9154528));
 
     private static Holder<MobEffect> registerMobEffect(String name, MobEffect effect)
     {
