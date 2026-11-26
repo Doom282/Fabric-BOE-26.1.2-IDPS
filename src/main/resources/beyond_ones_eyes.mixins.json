@@ -3,6 +3,7 @@
   "package": "net.doomxd.boe.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
+    "ClearAllStatusEffectsConsumeEffectMixin",
     "EntityMixin",
     "ExampleMixin",
     "LivingEntityMixin",

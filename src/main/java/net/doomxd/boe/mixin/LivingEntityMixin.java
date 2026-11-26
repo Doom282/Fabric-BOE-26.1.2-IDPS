@@ -1,11 +1,10 @@
 package net.doomxd.boe.mixin;
 
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.doomxd.boe.effect.ModEffects;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -13,14 +12,15 @@ import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LivingEntity.class)
 abstract class LivingEntityMixin extends Entity{
 
     @Shadow
     public abstract boolean hasEffect(Holder<MobEffect> effect);
+
+    @Shadow
+    public abstract boolean addEffect(MobEffectInstance newEffect);
 
     public LivingEntityMixin(EntityType<?> type, Level level) {
         super(type, level);
@@ -36,7 +36,18 @@ abstract class LivingEntityMixin extends Entity{
         return original;
     }
 
-    /**
+/**
+    @Inject(method = "removeAllEffects", at=@At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;onEffectsRemoved(Ljava/util/Collection;)V"))
+    public void removeAllEffects(CallbackInfoReturnable<Boolean> cir, @Local(name = "copy") Map<Holder<MobEffect>, MobEffectInstance> copy)
+    {
+        if(copy.containsValue(ModEffects.SHIFTED)) {
+            this.addEffect(new MobEffectInstance(ModEffects.SHIFTED, -1, 0, false, true));
+        }
+    }
+
+
+
+
      @Inject(method = "updateInvisibilityStatus", at = @At("TAIL"))
      public void updateInvisibilityStatus(CallbackInfo ci){
      assert Minecraft.getInstance().player != null;

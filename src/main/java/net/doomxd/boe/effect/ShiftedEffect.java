@@ -1,6 +1,7 @@
 package net.doomxd.boe.effect;
 
 import net.doomxd.boe.attachment.ModAttachments;
+import net.doomxd.boe.timer.ModAddEffectTimer;
 import net.doomxd.boe.utility.ModUtilityMethods;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.server.level.ServerLevel;
@@ -11,6 +12,7 @@ import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.LivingEntity;
@@ -75,7 +77,18 @@ public class ShiftedEffect extends MobEffect {
 
     @Override
     public void onEffectRemoved(MobEffectInstance effectInstance, LivingEntity entity) {
-        entity.setAttached(ModAttachments.IS_SHIFTED, false);
+        if(entity.hasEffect(MobEffects.BLINDNESS))
+        {
+            entity.setAttached(ModAttachments.IS_SHIFTED, false);
+        }
+        else
+        {
+            if(entity instanceof ServerPlayer player)
+            {
+                ModAddEffectTimer.INSTANCE.addEffectTimer(30, new MobEffectInstance(ModEffects.SHIFTED, -1, 0, false, true), player);
+                player.giveExperiencePoints(90);
+            }
+        }
         super.onEffectRemoved(effectInstance, entity);
     }
 
