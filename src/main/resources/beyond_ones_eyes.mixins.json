@@ -15,7 +15,9 @@
     "requireAnnotations": true
   },
   "client": [
+    "AtmosphericFogEnviormentMixin",
     "EntityRendererMixin",
+    "FogRendererMixin",
     "LightmapRenderStateExtractorMixin",
     "LivingEntityRendererMixin",
     "SkyRendererMixin"
