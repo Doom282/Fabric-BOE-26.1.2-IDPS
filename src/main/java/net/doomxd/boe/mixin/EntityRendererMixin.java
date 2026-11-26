@@ -18,6 +18,14 @@ abstract class EntityRendererMixin <T extends Entity, S extends EntityRenderStat
     private boolean isInvisible(boolean original, Entity entity) {
         if(entity instanceof LivingEntity entity1) {
             if(Minecraft.getInstance().player != null) {
+                if(!entity1.hasAttached(ModAttachments.IS_SHIFTED))
+                {
+                    entity1.setAttached(ModAttachments.IS_SHIFTED, false);
+                }
+                if(!Minecraft.getInstance().player.hasAttached(ModAttachments.IS_SHIFTED))
+                {
+                    Minecraft.getInstance().player.setAttached(ModAttachments.IS_SHIFTED, false);
+                }
                 boolean entityShifted = Boolean.TRUE.equals(entity1.getAttached(ModAttachments.IS_SHIFTED));
                 boolean playerShifted =   Minecraft.getInstance().player.hasEffect(ModEffects.SHIFTED);
                 boolean sameShift = entityShifted == playerShifted;

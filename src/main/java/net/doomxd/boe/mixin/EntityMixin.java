@@ -3,6 +3,7 @@ package net.doomxd.boe.mixin;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.doomxd.boe.attachment.ModAttachments;
 import net.doomxd.boe.effect.ModEffects;
+import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -16,6 +17,14 @@ abstract class EntityMixin {
     public boolean isInvisibleTo(boolean original, Player player) {
         if((Object) this instanceof LivingEntity livingEntity)
         {
+            if(!livingEntity.hasAttached(ModAttachments.IS_SHIFTED))
+            {
+                livingEntity.setAttached(ModAttachments.IS_SHIFTED, false);
+            }
+            if(player.hasAttached(ModAttachments.IS_SHIFTED))
+            {
+                player.setAttached(ModAttachments.IS_SHIFTED, false);
+            }
             if((player.hasEffect(ModEffects.SHIFTED) != livingEntity.getAttached(ModAttachments.IS_SHIFTED)) && livingEntity.getAttached(ModAttachments.IS_SHIFTED))
             {
                 return true;
