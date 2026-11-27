@@ -22,6 +22,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.AABB;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.Delayed;
 
 public class ShiftedEffect extends MobEffect {
@@ -77,11 +78,11 @@ public class ShiftedEffect extends MobEffect {
 
     @Override
     public void onEffectRemoved(MobEffectInstance effectInstance, LivingEntity entity) {
-        if(!entity.hasEffect(MobEffects.BLINDNESS))
+        if(!entity.hasEffect(MobEffects.DARKNESS))
         {
             if(entity instanceof ServerPlayer player)
             {
-                if(!player.gameMode.isCreative())
+                if(!player.gameMode.isCreative() && (Objects.requireNonNull(player.getEffect(ModEffects.SHIFTED)).getAmplifier() == 12))
                 {
                     ModAddEffectTimer.INSTANCE.addEffectTimer(30, new MobEffectInstance(ModEffects.SHIFTED, -1, 0, false, true), player);
                     player.giveExperiencePoints(90);

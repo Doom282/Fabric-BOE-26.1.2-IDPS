@@ -4,16 +4,17 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.LivingEntity;
 
 public class ModAddEffectTimer implements ServerTickEvents.EndTick {
     public static final ModAddEffectTimer INSTANCE = new ModAddEffectTimer();
     private long ticksUntilSomething;
     private MobEffectInstance effectInstance;
-    private ServerPlayer player;
+    private LivingEntity player;
     private String action;
 
 
-    public void addEffectTimer(long ticksUntilSomething, MobEffectInstance effectInstance, ServerPlayer player) {
+    public void addEffectTimer(long ticksUntilSomething, MobEffectInstance effectInstance, LivingEntity player) {
         this.ticksUntilSomething = ticksUntilSomething;
         this.effectInstance = effectInstance;
         this.player = player;

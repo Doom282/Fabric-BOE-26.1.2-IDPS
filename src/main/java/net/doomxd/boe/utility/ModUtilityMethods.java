@@ -7,10 +7,11 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
 
 public class ModUtilityMethods {
 
-    public static void fade(ServerPlayer player)
+    public static void fade(LivingEntity player)
     {
         MobEffectInstance woozy = new MobEffectInstance(MobEffects.DARKNESS, 60, 12, false, false);
         MobEffectInstance blind = new MobEffectInstance(MobEffects.BLINDNESS, 10, 20, false, false);
@@ -22,7 +23,7 @@ public class ModUtilityMethods {
         ModAddEffectTimer.INSTANCE.addEffectTimer(10, blind, player);
         ModAddEffectTimer.INSTANCE.addEffectTimer(30, see, player);
     }
-    public static void fadeSickly(ServerPlayer player)
+    public static void fadeSickly(LivingEntity player)
     {
         MobEffectInstance woozy = new MobEffectInstance(MobEffects.DARKNESS, 60, 12, false, false);
         MobEffectInstance blind = new MobEffectInstance(MobEffects.BLINDNESS, 10, 20, false, false);
@@ -38,7 +39,7 @@ public class ModUtilityMethods {
         ModAddEffectTimer.INSTANCE.addEffectTimer(30, see, player);
 
     }
-    public static void fadeOut(ServerPlayer player)
+    public static void fadeOut(LivingEntity player)
     {
         MobEffectInstance woozy = new MobEffectInstance(MobEffects.DARKNESS, 60, 12, false, false);
         MobEffectInstance blind = new MobEffectInstance(MobEffects.BLINDNESS, 10, 20, false, false);
@@ -48,5 +49,15 @@ public class ModUtilityMethods {
         ModAddEffectTimer.INSTANCE.addEffectTimer(10, blind, player);
         ModRemoveEffectTimer.INSTANCE.removeEffectTimer(30, see, player);
         ModAddEffectTimer.INSTANCE.addEffectTimer(31, slow, player);
+    }
+    public static void fadeWithout(LivingEntity player)
+    {
+        MobEffectInstance woozy = new MobEffectInstance(MobEffects.DARKNESS, 60, 12, false, false);
+        MobEffectInstance blind = new MobEffectInstance(MobEffects.BLINDNESS, 10, 20, false, false);
+
+
+
+        player.addEffect(woozy);
+        ModAddEffectTimer.INSTANCE.addEffectTimer(10, blind, player);
     }
 }
