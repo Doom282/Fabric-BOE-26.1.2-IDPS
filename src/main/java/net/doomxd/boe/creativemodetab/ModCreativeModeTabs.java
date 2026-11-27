@@ -19,6 +19,8 @@ public class ModCreativeModeTabs {
             .displayItems((parameters, output) -> {
                 output.accept(ModItems.LESOLITE);
                 output.accept(ModItems.LESOLITE_POOR_LENS);
+                output.accept(ModItems.FRAYGLASS_SHARD);
+                output.accept(ModItems.FRAYGLASS);
                 output.accept(ModBlocks.LESOLITE_ORE);
                 output.accept(ModBlocks.ELSEWHERE_WOOD_PLANKS);
                 output.accept(ModBlocks.ELSEWHERE_WOOD);

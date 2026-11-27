@@ -15,6 +15,10 @@ import java.util.function.Function;
 
 public class ModItems {
     public static final Item LESOLITE = registerItem("lesolite", Item::new);
+    public static final Item FRAYGLASS_SHARD = registerItem("frayglass_shard", Item::new);
+    public static final Item FRAYGLASS= registerItem("frayglass", Item::new);
+
+
     public static final Item LESOLITE_POOR_LENS = registerItem("lesolite_poor_lens", properties -> new LenseItem(properties.durability(32), 1));
 
     public static ResourceKey<Item> getRK(Item item)
@@ -36,6 +40,8 @@ public class ModItems {
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
             output.accept(LESOLITE);
             output.accept(LESOLITE_POOR_LENS);
+            output.accept(FRAYGLASS_SHARD);
+            output.accept(FRAYGLASS);
         });
     }
 
