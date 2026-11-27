@@ -17,7 +17,7 @@ abstract class EntityRendererMixin <T extends Entity, S extends EntityRenderStat
     @ModifyExpressionValue(method = "extractRenderState", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;isInvisible()Z"))
     private boolean isInvisible(boolean original, Entity entity) {
         if(entity instanceof LivingEntity entity1) {
-            if(Minecraft.getInstance().player != null) {
+            if(Minecraft.getInstance().player != null && !(Minecraft.getInstance().player == entity)) {
                 if(!entity1.hasAttached(ModAttachments.IS_SHIFTED))
                 {
                     entity1.setAttached(ModAttachments.IS_SHIFTED, false);
