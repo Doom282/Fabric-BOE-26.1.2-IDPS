@@ -21,6 +21,7 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider{
         tag(BlockTags.PLANKS).add(ModBlocks.getRK(ModBlocks.ELSEWHERE_WOOD_PLANKS));
         tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(ModBlocks.getRK(ModBlocks.ELSEWHERE_WOOD));
         tag(BlockTags.LEAVES).add(ModBlocks.getRK(ModBlocks.ELSEWHERE_LEAVES));
+        tag(BlockTags.LEAVES).add(ModBlocks.getRK(ModBlocks.FRAYGLASS_LEAVES));
         tag(BlockTags.FLOWER_POTS).add(ModBlocks.getRK(ModBlocks.POTTED_ELSEWHERE_WOOD_SAPLING));
     }
 }

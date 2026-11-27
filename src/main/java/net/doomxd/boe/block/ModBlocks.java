@@ -47,8 +47,14 @@ public class ModBlocks {
                     .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
                     .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
 
-
     public static final Block ELSEWHERE_LEAVES = registerBlock("elsewhere_leaves",
+            properties -> new ElsewhereBlock(properties.strength(0.1f)
+                    .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava().noOcclusion()
+                    .pushReaction(PushReaction.DESTROY).isRedstoneConductor(Blocks::never)
+                    .mapColor(MapColor.PLANT).isValidSpawn(Blocks::never)
+                    .isSuffocating(Blocks::never).isViewBlocking(Blocks::never), true));
+
+    public static final Block FRAYGLASS_LEAVES = registerBlock("frayglass_leaves",
             properties -> new ElsewhereBlock(properties.strength(0.1f)
                     .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava().noOcclusion()
                     .pushReaction(PushReaction.DESTROY).isRedstoneConductor(Blocks::never)

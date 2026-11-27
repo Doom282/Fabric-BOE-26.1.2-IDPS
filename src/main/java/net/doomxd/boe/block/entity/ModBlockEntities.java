@@ -17,7 +17,8 @@ public class ModBlockEntities {
                              "elseworld_be"), FabricBlockEntityTypeBuilder
                              .create(ElsewhereBlockEntity::new, ModBlocks.ELSEWHERE_WOOD_PLANKS,
                                      ModBlocks.ELSEWHERE_WOOD,
-                                     ModBlocks.ELSEWHERE_LEAVES
+                                     ModBlocks.ELSEWHERE_LEAVES,
+                                     ModBlocks.FRAYGLASS_LEAVES
                              //list all blocks for elsewhere blocks here
 
 
