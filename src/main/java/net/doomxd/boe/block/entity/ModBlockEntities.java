@@ -15,10 +15,12 @@ public class ModBlockEntities {
              Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE,
                      Identifier.fromNamespaceAndPath(BeyondOnesEyes.MOD_ID,
                              "elseworld_be"), FabricBlockEntityTypeBuilder
-                             .create(ElsewhereBlockEntity::new, ModBlocks.ELSEWHERE_WOOD_PLANKS,
+                             .create(ElsewhereBlockEntity::new,
+                                     ModBlocks.ELSEWHERE_WOOD_PLANKS,
                                      ModBlocks.ELSEWHERE_WOOD,
                                      ModBlocks.ELSEWHERE_LEAVES,
-                                     ModBlocks.FRAYGLASS_LEAVES
+                                     ModBlocks.FRAYGLASS_LEAVES,
+                                     ModBlocks.FRAYGLASS_WILLOW_WOOD
                              //list all blocks for elsewhere blocks here
 
 

@@ -82,7 +82,7 @@ public class ShiftedEffect extends MobEffect {
         {
             if(entity instanceof ServerPlayer player)
             {
-                if(!player.gameMode.isCreative() && (Objects.requireNonNull(player.getEffect(ModEffects.SHIFTED)).getAmplifier() == 12))
+                if(!player.gameMode.isCreative() && !(Objects.requireNonNull(player.getEffect(ModEffects.SHIFTED)).getAmplifier() == 12))
                 {
                     ModAddEffectTimer.INSTANCE.addEffectTimer(30, new MobEffectInstance(ModEffects.SHIFTED, -1, 0, false, true), player);
                     player.giveExperiencePoints(90);

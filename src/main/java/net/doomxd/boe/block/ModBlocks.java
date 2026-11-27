@@ -61,6 +61,12 @@ public class ModBlocks {
                     .mapColor(MapColor.PLANT).isValidSpawn(Blocks::never)
                     .isSuffocating(Blocks::never).isViewBlocking(Blocks::never), true));
 
+    public static final Block FRAYGLASS_WILLOW_WOOD = registerBlock("frayglass_willow_wood",
+            properties -> new ElsewhereBlock(properties.strength(1f)
+            .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
+            .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
+
+
     public static final Block ELSEWHERE_WOOD = registerBlock("elsewhere_wood",
             properties -> new ElsewhereBlock(properties.strength(1f)
                     .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
