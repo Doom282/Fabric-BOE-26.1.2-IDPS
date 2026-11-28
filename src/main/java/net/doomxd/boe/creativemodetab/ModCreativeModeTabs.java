@@ -29,6 +29,10 @@ public class ModCreativeModeTabs {
                 output.accept(ModBlocks.ELSEWHERE_BARRIER);
                 output.accept(ModBlocks.FRAYGLASS_LEAVES);
                 output.accept(ModBlocks.FRAYGLASS_WILLOW_WOOD);
+                output.accept(ModBlocks.FRAYGLASS_WILLOW_PLANKS);
+                output.accept(ModBlocks.FRAYGLASS_WILLOW_LOG);
+                output.accept(ModBlocks.GILDED_FRAYGLASS_WILLOW_WOOD);
+                output.accept(ModBlocks.GILDED_FRAYGLASS_WILLOW_LOG);
             }).build());
 
     public static void registerModCreativeModeTabs()

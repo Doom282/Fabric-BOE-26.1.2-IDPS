@@ -26,7 +26,8 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
                 .add(ModItems.getRK(ModBlocks.ELSEWHERE_WOOD_SAPLING.asItem()));
 
         tag(ItemTags.PLANKS)
-                .add(ModItems.getRK(ModBlocks.ELSEWHERE_WOOD_PLANKS.asItem()));
+                .add(ModItems.getRK(ModBlocks.ELSEWHERE_WOOD_PLANKS.asItem()))
+                .add(ModItems.getRK(ModBlocks.FRAYGLASS_WILLOW_PLANKS.asItem()));
 
         tag(ItemTags.LEAVES)
                 .add(ModItems.getRK(ModBlocks.ELSEWHERE_LEAVES.asItem()));

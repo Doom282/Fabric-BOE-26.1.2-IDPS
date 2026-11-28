@@ -67,6 +67,30 @@ public class ModBlocks {
             .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
 
 
+
+    public static final Block GILDED_FRAYGLASS_WILLOW_WOOD = registerBlock("gilded_frayglass_willow_wood",
+            properties -> new ElsewhereBlock(properties.strength(1f)
+                    .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
+                    .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
+
+
+    public static final Block FRAYGLASS_WILLOW_PLANKS = registerBlock("frayglass_willow_planks",
+            properties -> new ElsewhereBlock(properties.strength(1f)
+                    .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
+                    .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
+
+
+    public static final Block GILDED_FRAYGLASS_WILLOW_LOG = registerBlock("gilded_frayglass_willow_log",
+            properties -> new ElsewhereBlock(properties.strength(1f)
+                    .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
+                    .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
+
+    public static final Block FRAYGLASS_WILLOW_LOG = registerBlock("frayglass_willow_log",
+            properties -> new ElsewhereBlock(properties.strength(1f)
+                    .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
+                    .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
+
+
     public static final Block ELSEWHERE_WOOD = registerBlock("elsewhere_wood",
             properties -> new ElsewhereBlock(properties.strength(1f)
                     .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
