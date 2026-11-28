@@ -2,6 +2,7 @@ package net.doomxd.boe.block;
 
 import net.doomxd.boe.BeyondOnesEyes;
 import net.doomxd.boe.block.custom.ElsewhereBlock;
+import net.doomxd.boe.block.custom.ElsewhereRotatedPillarBlock;
 import net.doomxd.boe.block.custom.InverseElsewhereBlock;
 import net.doomxd.boe.worldgen.tree.ModTreeGrowers;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
@@ -62,14 +63,14 @@ public class ModBlocks {
                     .isSuffocating(Blocks::never).isViewBlocking(Blocks::never), true));
 
     public static final Block FRAYGLASS_WILLOW_WOOD = registerBlock("frayglass_willow_wood",
-            properties -> new ElsewhereBlock(properties.strength(1f)
+            properties -> new ElsewhereRotatedPillarBlock(properties.strength(1f)
             .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
             .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
 
 
 
     public static final Block GILDED_FRAYGLASS_WILLOW_WOOD = registerBlock("gilded_frayglass_willow_wood",
-            properties -> new ElsewhereBlock(properties.strength(1f)
+            properties -> new ElsewhereRotatedPillarBlock(properties.strength(1f)
                     .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
                     .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
 
@@ -81,12 +82,12 @@ public class ModBlocks {
 
 
     public static final Block GILDED_FRAYGLASS_WILLOW_LOG = registerBlock("gilded_frayglass_willow_log",
-            properties -> new ElsewhereBlock(properties.strength(1f)
+            properties -> new ElsewhereRotatedPillarBlock(properties.strength(1f)
                     .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
                     .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
 
     public static final Block FRAYGLASS_WILLOW_LOG = registerBlock("frayglass_willow_log",
-            properties -> new ElsewhereBlock(properties.strength(1f)
+            properties -> new ElsewhereRotatedPillarBlock(properties.strength(1f)
                     .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
                     .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
 

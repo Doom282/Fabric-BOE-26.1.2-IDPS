@@ -34,25 +34,22 @@ import org.jspecify.annotations.Nullable;
 
 public class ElsewhereBlock extends BaseEntityBlock {
     private final IntProvider xpRange = UniformInt.of(0, 2);
-    public static final BooleanProperty BREAKING = BooleanProperty.create("breaking");
     private final boolean dontdofalldmg;
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(BREAKING);
+
     }
 
     public ElsewhereBlock(Properties properties) {
         super(properties);
         dontdofalldmg=false;
-        registerDefaultState(defaultBlockState().setValue(BREAKING, false));
     }
 
     public ElsewhereBlock(Properties properties, boolean dontdofalldmg) {
         super(properties);
         this.dontdofalldmg = dontdofalldmg;
 
-        registerDefaultState(defaultBlockState().setValue(BREAKING, false));
     }
 
     @Override
@@ -206,14 +203,12 @@ public class ElsewhereBlock extends BaseEntityBlock {
     @Override
     protected InteractionResult useItemOn(ItemStack itemStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         //this.poof(level, pos);
-        state.setValue(BREAKING, true);
         return super.useItemOn(itemStack, state, level, pos, player, hand, hitResult);
     }
 
     @Override
     protected void attack(BlockState state, Level level, BlockPos pos, Player player) {
         this.poof(level, pos);
-        state.setValue(BREAKING, true);
         super.attack(state, level, pos, player);
     }
 

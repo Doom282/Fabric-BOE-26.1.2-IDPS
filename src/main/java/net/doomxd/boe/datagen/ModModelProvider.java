@@ -25,8 +25,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockModelGenerators.createTrivialCube(ModBlocks.ELSEWHERE_BARRIER);
         blockModelGenerators.createTrivialCube(ModBlocks.FRAYGLASS_WILLOW_PLANKS);
 
-        //blockModelGenerators.woodProvider(ModBlocks.FRAYGLASS_WILLOW_WOOD).log(ModBlocks.FRAYGLASS_WILLOW_LOG).wood(ModBlocks.FRAYGLASS_WILLOW_WOOD);
-        //blockModelGenerators.woodProvider(ModBlocks.GILDED_FRAYGLASS_WILLOW_WOOD).log(ModBlocks.GILDED_FRAYGLASS_WILLOW_LOG).wood(ModBlocks.GILDED_FRAYGLASS_WILLOW_WOOD);
+        blockModelGenerators.woodProvider(ModBlocks.FRAYGLASS_WILLOW_LOG).log(ModBlocks.FRAYGLASS_WILLOW_LOG).wood(ModBlocks.FRAYGLASS_WILLOW_WOOD);
+        blockModelGenerators.woodProvider(ModBlocks.GILDED_FRAYGLASS_WILLOW_LOG).log(ModBlocks.GILDED_FRAYGLASS_WILLOW_LOG).wood(ModBlocks.GILDED_FRAYGLASS_WILLOW_WOOD);
 
         blockModelGenerators.createPlantWithDefaultItem(ModBlocks.ELSEWHERE_WOOD_SAPLING,
                 ModBlocks.POTTED_ELSEWHERE_WOOD_SAPLING, BlockModelGenerators.PlantType.NOT_TINTED);

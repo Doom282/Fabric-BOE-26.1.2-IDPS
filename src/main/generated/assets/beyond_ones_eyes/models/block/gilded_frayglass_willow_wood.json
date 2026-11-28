@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "beyond_ones_eyes:block/gilded_frayglass_willow_log",
+    "side": "beyond_ones_eyes:block/gilded_frayglass_willow_log"
+  }
+}
