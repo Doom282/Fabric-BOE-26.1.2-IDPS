@@ -57,6 +57,8 @@ public class ModBlockEntities {
 
 
                             ).build());
+
+
     public static void registerBlockEntities()
     {
         BeyondOnesEyes.LOGGER.info("Registering Block Entities for" + BeyondOnesEyes.MOD_ID);

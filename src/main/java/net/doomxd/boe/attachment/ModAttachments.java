@@ -19,6 +19,28 @@ public class ModAttachments {
                     )
     );
 
+    public static final AttachmentType<Boolean> IS_BANISHED = AttachmentRegistry.create(
+            BeyondOnesEyes.id("is_banished"),
+            builder -> builder
+                    .initializer(() -> false) // The default value of the Attachment, if one has not been set.
+                    .persistent(Codec.BOOL)
+                    .syncWith(
+                            ByteBufCodecs.BOOL,  // Dictates how to turn the data into a packet to send to clients.
+                            AttachmentSyncPredicate.all() // Dictates who to send the data to.
+                    )
+    );
+
+    public static final AttachmentType<Boolean> IS_HIDDEN_SHIFTED = AttachmentRegistry.create(
+            BeyondOnesEyes.id("is_hidden_shifted"),
+            builder -> builder
+                    .initializer(() -> false) // The default value of the Attachment, if one has not been set.
+                    .persistent(Codec.BOOL)
+                    .syncWith(
+                            ByteBufCodecs.BOOL,  // Dictates how to turn the data into a packet to send to clients.
+                            AttachmentSyncPredicate.all() // Dictates who to send the data to.
+                    )
+    );
+
     public static void initialize() {
 
     }
