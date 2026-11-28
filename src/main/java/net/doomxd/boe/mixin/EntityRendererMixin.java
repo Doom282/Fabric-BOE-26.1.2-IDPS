@@ -27,8 +27,8 @@ abstract class EntityRendererMixin <T extends Entity, S extends EntityRenderStat
                     Minecraft.getInstance().player.setAttached(ModAttachments.IS_SHIFTED, false);
                 }
                 boolean entityShifted = Boolean.TRUE.equals(entity1.getAttached(ModAttachments.IS_SHIFTED));
-                boolean playerShifted =   Minecraft.getInstance().player.hasEffect(ModEffects.SHIFTED);
-                boolean sameShift = entityShifted == playerShifted;
+                boolean playerCanSeeShifted =   Minecraft.getInstance().player.hasEffect(ModEffects.SHIFTED);
+                boolean sameShift = entityShifted == playerCanSeeShifted;
                 if(!sameShift) {
                     return true;
                 }

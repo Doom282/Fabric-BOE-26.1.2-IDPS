@@ -25,7 +25,7 @@ abstract class EntityMixin {
             {
                 player.setAttached(ModAttachments.IS_SHIFTED, false);
             }
-            if((player.hasEffect(ModEffects.SHIFTED) != livingEntity.getAttached(ModAttachments.IS_SHIFTED)) && livingEntity.getAttached(ModAttachments.IS_SHIFTED))
+            if((player.hasEffect(ModEffects.SHIFTED) != livingEntity.getAttached(ModAttachments.IS_SHIFTED)) && livingEntity.getAttached(ModAttachments.IS_SHIFTED) && !player.hasEffect(ModEffects.OPENED_EYES))
             {
                 return true;
             }
