@@ -2,6 +2,7 @@ package net.doomxd.boe;
 
 import net.doomxd.boe.block.entity.ModBlockEntities;
 import net.doomxd.boe.block.entity.renderer.ElsewhereBlockEntityRenderer;
+import net.doomxd.boe.block.entity.renderer.ElsewhereRotatedPillarBlockEntityRenderer;
 import net.doomxd.boe.block.entity.renderer.InvertedElsewhereBlockEntityRenderer;
 import net.doomxd.boe.effect.ModEffects;
 import net.doomxd.boe.keymapping.ModKeyMappings;
@@ -17,6 +18,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 public class BeyondOnesEyesClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
+        BlockEntityRenderers.register(ModBlockEntities.ELSEWORLD_ROTATED_PILLAR_BLOCK_ENTITY_BLOCK_ENTITY_TYPE, ElsewhereRotatedPillarBlockEntityRenderer::new);
         BlockEntityRenderers.register(ModBlockEntities.ELSEWORLD_BLOCK_ENTITY_BLOCK_ENTITY_TYPE, ElsewhereBlockEntityRenderer::new);
         BlockEntityRenderers.register(ModBlockEntities.INVERTED_ELSEWORLD_BLOCK_ENTITY_BLOCK_ENTITY_TYPE, InvertedElsewhereBlockEntityRenderer::new);
         ModKeyMappings.register();
