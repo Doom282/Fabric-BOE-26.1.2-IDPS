@@ -22,11 +22,9 @@ public class ModBlockEntities {
                                      ModBlocks.ELSEWHERE_WOOD,
                                      ModBlocks.ELSEWHERE_LEAVES,
                                      ModBlocks.FRAYGLASS_LEAVES,
-                                     ModBlocks.FRAYGLASS_WILLOW_WOOD,
-                                     ModBlocks.FRAYGLASS_WILLOW_LOG,
-                                     ModBlocks.FRAYGLASS_WILLOW_PLANKS,
-                                     ModBlocks.GILDED_FRAYGLASS_WILLOW_LOG,
-                                     ModBlocks.GILDED_FRAYGLASS_WILLOW_WOOD
+                                     ModBlocks.FRAYGLASS_WILLOW_WOOD_PLANKS,
+                                     ModBlocks.GILDED_FRAYGLASS_WILLOW_WOOD_PLANKS
+
                              //list all blocks for elsewhere blocks here
 
 
@@ -39,7 +37,9 @@ public class ModBlockEntities {
                             "elseworld_rotated_pillar_be"), FabricBlockEntityTypeBuilder
                             .create(ElsewhereRotatedPillarBlockEntity::new,
                                     ModBlocks.FRAYGLASS_WILLOW_LOG,
-                                    ModBlocks.GILDED_FRAYGLASS_WILLOW_LOG
+                                    ModBlocks.FRAYGLASS_WILLOW_WOOD,
+                                    ModBlocks.GILDED_FRAYGLASS_WILLOW_LOG,
+                                    ModBlocks.GILDED_FRAYGLASS_WILLOW_WOOD
                                     //list all blocks for elsewhere blocks here
 
 

@@ -75,7 +75,12 @@ public class ModBlocks {
                     .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
 
 
-    public static final Block FRAYGLASS_WILLOW_PLANKS = registerBlock("frayglass_willow_planks",
+    public static final Block GILDED_FRAYGLASS_WILLOW_WOOD_PLANKS = registerBlock("gilded_frayglass_willow_wood_planks",
+            properties -> new ElsewhereBlock(properties.strength(1f)
+                    .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
+                    .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));
+
+    public static final Block FRAYGLASS_WILLOW_WOOD_PLANKS = registerBlock("frayglass_willow_wood_planks",
             properties -> new ElsewhereBlock(properties.strength(1f)
                     .sound(SoundType.AMETHYST).noOcclusion().ignitedByLava()
                     .isValidSpawn(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never)));

@@ -30,7 +30,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             public void buildRecipes()
             {
                 List<ItemLike> BOE_LESOLITE_ITEMS = List.of(ModItems.LESOLITE_POOR_LENS, ModItems.LESOLITE, ModBlocks.LESOLITE_ORE);
-                List<ItemLike> BOE_FRAYGLASS_ITEMS = List.of(ModItems.FRAYGLASS, ModItems.FRAYGLASS_SHARD,  ModBlocks.FRAYGLASS_LEAVES,ModBlocks.FRAYGLASS_WILLOW_LOG, ModBlocks.FRAYGLASS_LEAVES, ModBlocks.FRAYGLASS_WILLOW_PLANKS );
+                List<ItemLike> BOE_FRAYGLASS_ITEMS = List.of(ModItems.FRAYGLASS, ModItems.FRAYGLASS_SHARD,  ModBlocks.FRAYGLASS_LEAVES,ModBlocks.FRAYGLASS_WILLOW_LOG, ModBlocks.FRAYGLASS_LEAVES, ModBlocks.FRAYGLASS_WILLOW_WOOD_PLANKS );
                 List<ItemLike> BOE_ELSEWHERE_WOOD_BLOCKS = List.of(ModBlocks.ELSEWHERE_LEAVES, ModBlocks.ELSEWHERE_WOOD, ModBlocks.ELSEWHERE_WOOD_PLANKS);
 
                 oreSmelting(BOE_LESOLITE_ITEMS, RecipeCategory.MISC, CookingBookCategory.BLOCKS,
@@ -59,15 +59,27 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .group("barrier")
                         .save(output);
 
-                /**
-                shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FRAYGLASS_WILLOW_PLANKS, 3) // You can also specify an int to produce more than one
+                shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GILDED_FRAYGLASS_WILLOW_WOOD_PLANKS, 3) // You can also specify an int to produce more than one
+                        .requires(ModBlocks.GILDED_FRAYGLASS_WILLOW_WOOD) // You can also specify an int to require more than one, or a tag to accept multiple things
+                        // Create an advancement that gives you the recipe
+                        .unlockedBy(getHasName(ModBlocks.GILDED_FRAYGLASS_WILLOW_WOOD), has(ModBlocks.GILDED_FRAYGLASS_WILLOW_WOOD))
+                        .save(output, "gilded_frayglass_willow_wood_to_planks");
+
+
+                shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GILDED_FRAYGLASS_WILLOW_WOOD_PLANKS, 4) // You can also specify an int to produce more than one
+                        .requires(ModBlocks.GILDED_FRAYGLASS_WILLOW_LOG) // You can also specify an int to require more than one, or a tag to accept multiple things
+                        // Create an advancement that gives you the recipe
+                        .unlockedBy(getHasName(ModBlocks.GILDED_FRAYGLASS_WILLOW_LOG), has(ModBlocks.GILDED_FRAYGLASS_WILLOW_LOG))
+                        .save(output);
+
+                shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FRAYGLASS_WILLOW_WOOD_PLANKS, 3) // You can also specify an int to produce more than one
                         .requires(ModBlocks.FRAYGLASS_WILLOW_WOOD) // You can also specify an int to require more than one, or a tag to accept multiple things
                         // Create an advancement that gives you the recipe
                         .unlockedBy(getHasName(ModBlocks.FRAYGLASS_WILLOW_WOOD), has(ModBlocks.FRAYGLASS_WILLOW_WOOD))
-                        .save(output);
-                **/
+                        .save(output, "frayglass_willow_wood_to_planks");
 
-                shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FRAYGLASS_WILLOW_PLANKS, 4) // You can also specify an int to produce more than one
+
+                shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FRAYGLASS_WILLOW_WOOD_PLANKS, 4) // You can also specify an int to produce more than one
                         .requires(ModBlocks.FRAYGLASS_WILLOW_LOG) // You can also specify an int to require more than one, or a tag to accept multiple things
                         // Create an advancement that gives you the recipe
                         .unlockedBy(getHasName(ModBlocks.FRAYGLASS_WILLOW_LOG), has(ModBlocks.FRAYGLASS_WILLOW_LOG))

@@ -18,7 +18,7 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider{
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.getRK(ModBlocks.LESOLITE_ORE));
         tag(BlockTags.LOGS).add(ModBlocks.getRK(ModBlocks.ELSEWHERE_WOOD)).add(ModBlocks.getRK(ModBlocks.FRAYGLASS_WILLOW_LOG));
-        tag(BlockTags.PLANKS).add(ModBlocks.getRK(ModBlocks.ELSEWHERE_WOOD_PLANKS)).add(ModBlocks.getRK(ModBlocks.FRAYGLASS_WILLOW_PLANKS));
+        tag(BlockTags.PLANKS).add(ModBlocks.getRK(ModBlocks.ELSEWHERE_WOOD_PLANKS)).add(ModBlocks.getRK(ModBlocks.FRAYGLASS_WILLOW_WOOD_PLANKS));
         tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(ModBlocks.getRK(ModBlocks.ELSEWHERE_WOOD)).add(ModBlocks.getRK(ModBlocks.FRAYGLASS_WILLOW_LOG));
         tag(BlockTags.LEAVES).add(ModBlocks.getRK(ModBlocks.ELSEWHERE_LEAVES)).add(ModBlocks.getRK(ModBlocks.FRAYGLASS_LEAVES));
         tag(BlockTags.FLOWER_POTS).add(ModBlocks.getRK(ModBlocks.POTTED_ELSEWHERE_WOOD_SAPLING));

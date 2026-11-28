@@ -19,8 +19,6 @@ public class ModCreativeModeTabs {
             .displayItems((parameters, output) -> {
                 output.accept(ModItems.LESOLITE);
                 output.accept(ModItems.LESOLITE_POOR_LENS);
-                output.accept(ModItems.FRAYGLASS_SHARD);
-                output.accept(ModItems.FRAYGLASS);
                 output.accept(ModBlocks.LESOLITE_ORE);
                 output.accept(ModBlocks.ELSEWHERE_WOOD_PLANKS);
                 output.accept(ModBlocks.ELSEWHERE_WOOD);
@@ -29,7 +27,10 @@ public class ModCreativeModeTabs {
                 output.accept(ModBlocks.ELSEWHERE_BARRIER);
                 output.accept(ModBlocks.FRAYGLASS_LEAVES);
                 output.accept(ModBlocks.FRAYGLASS_WILLOW_WOOD);
-                output.accept(ModBlocks.FRAYGLASS_WILLOW_PLANKS);
+                output.accept(ModBlocks.GILDED_FRAYGLASS_WILLOW_WOOD_PLANKS);
+                output.accept(ModItems.FRAYGLASS_SHARD);
+                output.accept(ModItems.FRAYGLASS);
+                output.accept(ModBlocks.FRAYGLASS_WILLOW_WOOD_PLANKS);
                 output.accept(ModBlocks.FRAYGLASS_WILLOW_LOG);
                 output.accept(ModBlocks.GILDED_FRAYGLASS_WILLOW_WOOD);
                 output.accept(ModBlocks.GILDED_FRAYGLASS_WILLOW_LOG);
