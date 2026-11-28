@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "beyond_ones_eyes:gilded_frayglass_willow_wood"
+  ],
+  "result": {
+    "count": 3,
+    "id": "beyond_ones_eyes:gilded_frayglass_willow_wood_planks"
+  }
+}
